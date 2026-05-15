@@ -43,11 +43,11 @@ const impactStats = [
   title="Ives Torres Foundation | Más oportunidades para personas con discapacidad"
   description="Brindamos apoyo comunitario a familias y a sus seres queridos con discapacidad."
 >
-  <section class="hero-shell pt-12 lg:pt-16">
+  <section class="hero-shell pt-10 lg:pt-14" data-reveal-group>
     <div class="section-band section-band-soft relative overflow-hidden" data-reveal>
       <div class="floating-orb absolute -left-6 top-8 h-20 w-20 rounded-full bg-gold/15 blur-2xl"></div>
       <div class="floating-orb absolute right-10 top-16 hidden h-28 w-28 rounded-full bg-sky/60 blur-3xl lg:block"></div>
-      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-14">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_37rem] lg:items-center xl:grid-cols-[minmax(0,1fr)_39rem] xl:gap-10">
       <div class="flex flex-col justify-center gap-8">
         <div class="eyebrow-chip">
           <span class="kicker-dot">California · Comunidad bilingüe · Apoyo familiar</span>
@@ -55,10 +55,10 @@ const impactStats = [
 
         <div class="space-y-5">
           <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Somos ITF</p>
-          <h1 class="max-w-4xl font-display text-[clamp(2.85rem,4.8vw,4.6rem)] leading-[1.04] tracking-tight text-ink">
+          <h1 class="max-w-[38rem] font-display text-[clamp(2.45rem,3.9vw,4rem)] leading-[1.04] tracking-tight text-ink" style="text-wrap: balance;">
             Apoyamos a familias hispanas con seres queridos con discapacidad a encontrar recursos, educación y comunidad.
           </h1>
-          <p class="max-w-2xl text-[1.05rem] leading-8 text-muted">
+          <p class="max-w-2xl text-[1rem] leading-8 text-muted">
             Apoyamos a familias e individuos con discapacidades intelectuales y del desarrollo con
             educación especial, Centros Regionales, servicios de salud, herramientas de
             autoabogacía, actividades, eventos y redes de apoyo.
@@ -73,7 +73,7 @@ const impactStats = [
 
         <div class="grid gap-4 sm:grid-cols-3">
           {heroStats.map((stat) => (
-            <div class="shell-card p-4" data-reveal>
+            <div class="support-card p-4" data-reveal>
               <p class="text-base font-semibold uppercase tracking-[0.2em] text-navy">{stat.value}</p>
               <p class="mt-2 text-sm leading-6 text-muted">{stat.label}</p>
             </div>
@@ -82,22 +82,23 @@ const impactStats = [
       </div>
 
       <div class="grid gap-4">
-        <div class="relative min-h-[23rem] overflow-hidden rounded-[2.2rem] border border-white/75 bg-white shadow-[0_28px_80px_rgba(16,35,62,0.18)]" data-reveal>
+        <div class="hero-image-card min-h-[22rem]" data-reveal>
           <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,26,48,0.08)_0%,rgba(11,26,48,0.42)_100%)]"></div>
           <img
             src="/images/hero/community-hero.jpg"
             alt="Familias y comunidad reunidas en una actividad de Ives Torres Foundation"
             class="h-full w-full object-cover"
+            style="object-position: center 36%;"
           />
-          <div class="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/20 bg-white/14 p-4 text-white backdrop-blur-md">
+          <div class="image-note">
             <p class="text-xs font-semibold uppercase tracking-[0.24em] text-white/80">Comunidad en acción</p>
-            <p class="mt-2 max-w-sm text-sm leading-6 text-white/90">
+            <p class="mt-2 max-w-sm text-sm font-medium leading-6 text-white">
               Espacios cálidos para aprender, conectar y sentirse acompañados.
             </p>
           </div>
         </div>
         <div class="grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
-          <article class="rounded-[1.9rem] bg-[linear-gradient(145deg,#14365b_0%,#214f7b_100%)] p-6 text-white shadow-[0_24px_72px_rgba(16,35,62,0.22)]" data-reveal>
+          <article class="premium-card rounded-[1.8rem] bg-[linear-gradient(145deg,#14365b_0%,#214f7b_100%)] p-6 text-white shadow-[0_24px_72px_rgba(16,35,62,0.22)]" data-reveal>
             <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Noticias</p>
             <h2 class="mt-3 font-display text-2xl leading-tight">{featuredNews[0].title}</h2>
             <p class="mt-3 text-sm leading-7 text-white/80">{featuredNews[0].description}</p>
@@ -105,7 +106,7 @@ const impactStats = [
           </article>
           <div class="grid gap-4">
             {heroHighlights.slice(0, 2).map((item) => (
-              <article class="shell-card p-5" data-reveal>
+              <article class="support-card" data-reveal>
                 <h2 class="text-sm font-semibold text-navy">{item.title}</h2>
                 <p class="mt-2 text-sm leading-6 text-muted">{item.description}</p>
               </article>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { aboutHighlights, aboutSections, partners, values } from '../data/site';
@@ -16,6 +17,9 @@ import { aboutHighlights, aboutSections, partners, values } from '../data/site';
     description="Ives Torres Foundation acompaña a familias hispanas con recursos, educación, autoabogacía, eventos y redes de apoyo."
     imageSrc="/images/donate/donate-support.jpg"
     imageAlt="Integrantes de la comunidad en una actividad de la fundación"
+    imagePosition="center 36%"
+    imageNote="Ives Torres es la inspiración detrás de la fundación."
+    imageNoteIcon="heart"
   />
 
   <section class="site-shell py-12">
@@ -55,9 +59,22 @@ import { aboutHighlights, aboutSections, partners, values } from '../data/site';
       description="La fundación crece con acompañamiento familiar, recursos compartidos y una red amplia de aliados."
     />
     <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {aboutHighlights.map((item) => (
-        <article class="premium-card p-6" data-reveal>
-          <p class="text-sm leading-7 text-muted">{item}</p>
+      {aboutHighlights.map((item, index) => (
+        <article class="feature-card" data-reveal>
+          <div class="flex items-start gap-4">
+            <span class="soft-icon-chip h-12 w-12">
+              <Icon
+                name={index === 0 ? 'heart' : index === 1 ? 'map' : 'users'}
+                class="h-5 w-5"
+              />
+            </span>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+                {index === 0 ? 'Inspiración' : index === 1 ? 'Comunidad' : 'Acompañamiento'}
+              </p>
+              <p class="mt-3 text-sm leading-7 text-muted">{item}</p>
+            </div>
+          </div>
         </article>
       ))}
     </div>

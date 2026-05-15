@@ -7,31 +7,20 @@ const socialLinks = [
     label: 'Facebook',
     href: 'https://www.facebook.com/ivestorresfoundation',
     icon: 'facebook',
-    hoverClass: 'hover:text-[#1877F2]',
+    className: 'border-[#1877F2] bg-[#1877F2] text-white hover:bg-[#1567d8] hover:border-[#1567d8]',
   },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/ivestorresfoundation',
     icon: 'instagram',
-    hoverClass: 'hover:text-[#E4405F]',
-  },
-  {
-    label: 'YouTube',
-    href: '#',
-    icon: 'youtube',
-    hoverClass: 'hover:text-[#FF0000]',
-  },
-  {
-    label: 'LinkedIn',
-    href: '#',
-    icon: 'linkedin',
-    hoverClass: 'hover:text-[#0A66C2]',
+    className: 'border-transparent text-white hover:brightness-105',
+    style: 'background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);',
   },
   {
     label: 'TikTok',
     href: 'https://www.tiktok.com/@ivestorresfoundation',
     icon: 'tiktok',
-    hoverClass: 'hover:text-[#111111]',
+    className: 'border-[#111111] bg-[#111111] text-white hover:bg-[#252525] hover:border-[#252525]',
   },
 ] as const;
 ---
@@ -105,16 +94,13 @@ const socialLinks = [
             target={item.href.startsWith('http') ? '_blank' : undefined}
             rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
             aria-label={item.label}
-            class:list={['social-chip', item.hoverClass]}
+            class:list={['social-chip', item.className]}
+            style={item.style}
           >
             <Icon name={item.icon} class="h-5 w-5" />
           </a>
         ))}
       </div>
-      <ul class="mt-5 space-y-3 text-sm text-muted">
-        <li><a href="/news" class="transition hover:text-navy">Noticias</a></li>
-        <li><a href="/events" class="transition hover:text-navy">Eventos</a></li>
-      </ul>
     </div>
   </div>
 </footer>

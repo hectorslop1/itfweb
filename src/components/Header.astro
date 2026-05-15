@@ -9,12 +9,11 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 <header class="site-header sticky top-0 z-40 border-b border-white/55 bg-[rgba(247,243,234,0.78)] backdrop-blur-2xl" data-site-header>
   <div class="site-shell flex items-center justify-between gap-6 py-4 lg:gap-8">
     <a href="/" class="flex min-w-0 items-center gap-4 transition hover:opacity-95" aria-label="Ives Torres Foundation home">
-      <span class="grid h-[3.25rem] w-[3.25rem] shrink-0 place-items-center rounded-[1.2rem] bg-[linear-gradient(145deg,#17385e_0%,#2b5a86_100%)] text-sm font-bold text-white shadow-soft">
-        ITF
+      <span class="grid h-[3.35rem] w-[3.35rem] shrink-0 place-items-center overflow-hidden rounded-[1.2rem] bg-[linear-gradient(145deg,#17385e_0%,#2b5a86_100%)] p-2 shadow-soft">
+        <img src="/images/hero/ITFLogoColor.png" alt="" class="h-full w-full object-contain" />
       </span>
       <span class="flex min-w-0 flex-col leading-tight">
         <span class="font-display text-[1.02rem] text-ink sm:text-lg">Ives Torres Foundation</span>
-        <span class="hidden text-[0.68rem] uppercase tracking-[0.24em] text-muted xl:block">Apoyo, recursos y comunidad</span>
       </span>
     </a>
 
@@ -26,10 +25,10 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
           href={item.href}
           aria-current={isActive ? 'page' : undefined}
           class:list={[
-            'relative rounded-full px-4 py-2.5 text-sm font-medium transition duration-300',
+            "relative rounded-full px-4 py-2.5 text-sm font-medium transition duration-300 after:absolute after:left-1/2 after:h-1.5 after:w-1.5 after:-translate-x-1/2 after:rounded-full after:bg-gold after:transition-all after:duration-300 after:content-['']",
             isActive
-              ? 'bg-white text-navy shadow-sm ring-1 ring-white/80 after:absolute after:bottom-[0.45rem] after:left-1/2 after:h-1.5 after:w-1.5 after:-translate-x-1/2 after:rounded-full after:bg-gold'
-              : 'text-muted hover:bg-white/72 hover:text-navy',
+              ? 'bg-white text-navy shadow-sm ring-1 ring-white/80 after:-bottom-[0.22rem] after:opacity-100'
+              : 'text-muted after:-bottom-[0.22rem] after:opacity-0 hover:-translate-y-[1px] hover:bg-white/92 hover:text-navy hover:shadow-sm hover:ring-1 hover:ring-white/80 hover:after:opacity-100',
           ]}
         >
           {item.label}

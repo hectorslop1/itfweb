@@ -17,44 +17,53 @@ import { upcomingEvents } from '../data/events';
     description="Los eventos públicos de ITF acercan recursos, conversación, inclusión y apoyo a familias de Inland Empire, Valle Central y otras comunidades."
     imageSrc="/images/events/event-expo.jpg"
     imageAlt="Flyer y materiales de un evento comunitario"
-    imagePosition="center"
+    imagePosition="center 56%"
     imageNote="Los detalles de cada encuentro se comparten en coordinación con la fundación."
     imageNoteIcon="calendar"
   />
 
-  <section class="site-shell py-12" id="eventos">
-    <div class="grid gap-4">
+  <section class="site-shell py-12" id="eventos" data-reveal-group>
+    <div class="grid gap-5 lg:grid-cols-3">
       {upcomingEvents.map((event) => (
-        <article class="premium-card grid overflow-hidden lg:grid-cols-[17rem_1fr]" data-reveal>
-          <div class="media-frame h-full rounded-none border-0">
-            <img
-              src={event.image}
-              alt={event.title}
-              loading="lazy"
-              class:list={[
-                'h-full w-full',
-                event.image.includes('expo') ? 'bg-white object-contain p-4' : 'object-cover',
-              ]}
-              style={event.image.includes('community-cabe') ? 'object-position: center 35%;' : undefined}
-            />
+        <article class="premium-card flex h-full flex-col overflow-hidden" data-reveal>
+          <div class="media-frame h-52 rounded-b-none border-0">
+            {event.image.includes('expo') ? (
+              <img
+                src={event.image}
+                alt={event.title}
+                loading="lazy"
+                class="h-full w-full bg-white object-contain p-5"
+              />
+            ) : (
+              <img
+                src={event.image}
+                alt={event.title}
+                loading="lazy"
+                class="h-full w-full object-cover"
+                style={event.image.includes('community-cabe') ? 'object-position: center 35%;' : 'object-position: center;'}
+              />
+            )}
           </div>
-          <div class="min-w-0 grow p-5">
-            <div class="mb-4 inline-flex rounded-2xl bg-panel px-4 py-2 shadow-sm">
-              <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{event.date}</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-2">
-              <h2 class="font-display text-2xl text-ink">{event.title}</h2>
-              <span class="tag-badge !border-transparent !bg-sky/70">
-                {event.region}
+          <div class="flex min-h-[18rem] grow flex-col p-6">
+            <div class="mb-4 flex items-center justify-between gap-3">
+              <div class="inline-flex items-center rounded-2xl bg-panel px-4 py-2 shadow-sm">
+                <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{event.date}</span>
+              </div>
+              <span class="soft-icon-chip h-10 w-10">
+                <Icon name="calendar" class="h-4 w-4" />
               </span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-badge !border-transparent !bg-sky/70">{event.region}</span>
               {event.time && (
                 <span class="tag-badge !border-transparent" style="background-color: rgba(220, 163, 56, 0.16);">
                   {event.time}
                 </span>
               )}
             </div>
-            <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
-            <div class="mt-4 flex flex-wrap gap-3">
+            <h2 class="mt-4 font-display text-2xl text-ink">{event.title}</h2>
+            <p class="mt-3 grow text-sm leading-7 text-muted">{event.details}</p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
               <Button href={event.ctaLabel === 'Registrarme' ? '#registro-eventos' : '#detalles-eventos'} variant={event.ctaLabel === 'Registrarme' ? 'primary' : 'secondary'}>
                 {event.ctaLabel}
               </Button>
@@ -118,7 +127,7 @@ import { upcomingEvents } from '../data/events';
 
   <section class="site-shell pb-16 pt-12">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">¿Quieres saber cuál evento es mejor para tu familia?</h2>
+      <h2 class="font-display text-3xl tracking-tight">¿Quieres saber qué evento puede ser mejor para tu familia?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
         Podemos ayudarte a encontrar un taller, encuentro o actividad que responda a tus intereses y necesidades.
       </p>

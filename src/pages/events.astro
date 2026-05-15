@@ -1,29 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { upcomingEvents } from '../data/events';
 ---
 
 <BaseLayout
-  title="Events | Ives Torres Foundation"
-  description="Conoce proximos eventos, talleres y encuentros comunitarios."
+  title="Eventos | Ives Torres Foundation"
+  description="Conoce próximos eventos, talleres y encuentros comunitarios."
 >
   <PageHero
     eyebrow="Eventos"
     title="Eventos pensados para aprender, compartir y fortalecer comunidad."
     description="Los eventos públicos de ITF acercan recursos, conversación, inclusión y apoyo a familias de Inland Empire, Valle Central y otras comunidades."
     imageSrc="/images/events/event-expo.jpg"
-    imageAlt="Ilustracion de evento comunitario"
+    imageAlt="Flyer y materiales de un evento comunitario"
+    imagePosition="center"
+    imageNote="Los detalles de cada encuentro se comparten en coordinación con la fundación."
+    imageNoteIcon="calendar"
   />
 
-  <section class="site-shell py-12">
+  <section class="site-shell py-12" id="eventos">
     <div class="grid gap-4">
       {upcomingEvents.map((event) => (
         <article class="premium-card grid overflow-hidden lg:grid-cols-[17rem_1fr]" data-reveal>
           <div class="media-frame h-full rounded-none border-0">
-            <img src={event.image} alt={event.title} loading="lazy" />
+            <img
+              src={event.image}
+              alt={event.title}
+              loading="lazy"
+              class:list={[
+                'h-full w-full',
+                event.image.includes('expo') ? 'bg-white object-contain p-4' : 'object-cover',
+              ]}
+              style={event.image.includes('community-cabe') ? 'object-position: center 35%;' : undefined}
+            />
           </div>
           <div class="min-w-0 grow p-5">
             <div class="mb-4 inline-flex rounded-2xl bg-panel px-4 py-2 shadow-sm">
@@ -31,20 +44,25 @@ import { upcomingEvents } from '../data/events';
             </div>
             <div class="flex flex-wrap items-center gap-2">
               <h2 class="font-display text-2xl text-ink">{event.title}</h2>
-              <span class="rounded-full bg-sky/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+              <span class="tag-badge !border-transparent !bg-sky/70">
                 {event.region}
               </span>
               {event.time && (
-                <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+                <span class="tag-badge !border-transparent" style="background-color: rgba(220, 163, 56, 0.16);">
                   {event.time}
                 </span>
               )}
             </div>
             <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
-            <div class="mt-4">
-              <Button href="/contact" variant={event.ctaLabel === 'Registrarme' ? 'primary' : 'secondary'}>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <Button href={event.ctaLabel === 'Registrarme' ? '#registro-eventos' : '#detalles-eventos'} variant={event.ctaLabel === 'Registrarme' ? 'primary' : 'secondary'}>
                 {event.ctaLabel}
               </Button>
+              {event.ctaLabel === 'Registrarme' ? (
+                <span class="tag-badge !border-line !bg-white">Registro</span>
+              ) : (
+                <span class="tag-badge !border-line !bg-white">Detalles</span>
+              )}
             </div>
           </div>
         </article>
@@ -52,7 +70,7 @@ import { upcomingEvents } from '../data/events';
     </div>
   </section>
 
-  <section class="site-shell py-6">
+  <section class="site-shell py-6" id="detalles-eventos">
     <SectionHeading
       eyebrow="Experiencia"
       title="Más que fechas, los eventos son una puerta de entrada a la comunidad."
@@ -60,28 +78,52 @@ import { upcomingEvents } from '../data/events';
     />
     <div class="mt-10 grid gap-4 md:grid-cols-3">
       <article class="premium-card p-6" data-reveal>
+        <span class="soft-icon-chip">
+          <Icon name="calendar" class="h-5 w-5" />
+        </span>
         <h2 class="font-display text-xl text-ink">Talleres</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Espacios de aprendizaje con explicaciones claras y tiempo para preguntas reales.</p>
       </article>
       <article class="premium-card p-6" data-reveal>
+        <span class="soft-icon-chip">
+          <Icon name="users" class="h-5 w-5" />
+        </span>
         <h2 class="font-display text-xl text-ink">Convivencia</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Encuentros que fortalecen relaciones, confianza y apoyo entre familias.</p>
       </article>
       <article class="premium-card p-6" data-reveal>
+        <span class="soft-icon-chip">
+          <Icon name="book" class="h-5 w-5" />
+        </span>
         <h2 class="font-display text-xl text-ink">Recursos</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Oportunidades para conocer aliados, materiales útiles y servicios disponibles.</p>
       </article>
     </div>
   </section>
 
+  <section class="site-shell py-6" id="registro-eventos">
+    <div class="section-band section-band-soft grid gap-6 lg:grid-cols-[0.94fr_1.06fr] lg:items-center" data-reveal>
+      <div>
+        <div class="eyebrow-chip">
+          <Icon name="calendar" class="h-4 w-4" />
+          <span>Registro de eventos</span>
+        </div>
+        <h2 class="mt-5 font-display text-3xl tracking-tight text-ink">Los detalles de registro se confirmarán con la fundación antes del lanzamiento.</h2>
+      </div>
+      <p class="text-sm leading-7 text-muted">
+        Esta sección reúne la información principal de cada encuentro para que las familias puedan ubicar fechas, región y tipo de experiencia de una manera más clara.
+      </p>
+    </div>
+  </section>
+
   <section class="site-shell pb-16 pt-12">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Quieres saber cuál evento es mejor para tu familia?</h2>
+      <h2 class="font-display text-3xl tracking-tight">¿Quieres saber cuál evento es mejor para tu familia?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
         Podemos ayudarte a encontrar un taller, encuentro o actividad que responda a tus intereses y necesidades.
       </p>
       <div class="mt-6">
-        <Button href="/contact" variant="secondary">Pedir informacion</Button>
+        <Button href="/contact" variant="secondary">Pedir información</Button>
       </div>
     </div>
   </section>

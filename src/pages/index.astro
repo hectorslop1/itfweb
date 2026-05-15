@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { heroHighlights, heroStats } from '../data/hero';
 import { featuredPrograms } from '../data/programs';
@@ -13,25 +14,28 @@ import { donationHighlights } from '../data/site';
 const whatWeDo = [
   {
     title: 'Educación especial y Centros Regionales',
+    icon: 'book',
     description:
       'Compartimos capacitación y recursos para que las familias puedan navegar servicios, escuela y salud con mayor claridad.',
   },
   {
     title: 'Autoabogacía e inclusión',
+    icon: 'heart',
     description:
       'Promovemos herramientas, actividades y espacios de participación que fortalecen la voz de las familias y las personas con discapacidad.',
   },
   {
     title: 'Eventos y redes de apoyo',
+    icon: 'users',
     description:
       'Creamos encuentros donde las familias se sienten acompañadas, conectadas y respaldadas por la comunidad.',
   },
 ];
 
 const impactStats = [
-  { value: '5,000+', label: 'Members / Miembros' },
-  { value: '50+', label: 'Cities / Ciudades' },
-  { value: '1,000+', label: 'Families / Familia' },
+  { value: '5,000+', label: 'Miembros' },
+  { value: '50+', label: 'Ciudades' },
+  { value: '1,000+', label: 'Familias' },
 ];
 ---
 
@@ -122,6 +126,9 @@ const impactStats = [
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
       {whatWeDo.map((item) => (
         <article class="premium-card p-6" data-reveal>
+          <span class="soft-icon-chip">
+            <Icon name={item.icon as 'book' | 'heart' | 'users'} class="h-5 w-5" />
+          </span>
           <h3 class="font-display text-2xl text-ink">{item.title}</h3>
           <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
         </article>
@@ -189,7 +196,7 @@ const impactStats = [
               </div>
               <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
               <div class="mt-4">
-                <Button href="/events" variant="secondary">{event.ctaLabel}</Button>
+                <Button href={event.ctaLabel === 'Registrarme' ? '/events#registro-eventos' : '/events#detalles-eventos'} variant="secondary">{event.ctaLabel}</Button>
               </div>
             </div>
           </article>
@@ -299,7 +306,10 @@ const impactStats = [
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {resourceTopics.map((topic) => (
           <article class="premium-card p-5" data-reveal>
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{topic.title}</p>
+            <span class="soft-icon-chip">
+              <Icon name="book" class="h-5 w-5" />
+            </span>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-gold">{topic.title}</p>
             <p class="mt-3 text-sm leading-7 text-muted">{topic.description}</p>
           </article>
         ))}

@@ -1,9 +1,43 @@
 ---
 import Button from './Button.astro';
+import Icon from './Icon.astro';
+
+const socialLinks = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/ivestorresfoundation',
+    icon: 'facebook',
+    hoverClass: 'hover:text-[#1877F2]',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/ivestorresfoundation',
+    icon: 'instagram',
+    hoverClass: 'hover:text-[#E4405F]',
+  },
+  {
+    label: 'YouTube',
+    href: '#',
+    icon: 'youtube',
+    hoverClass: 'hover:text-[#FF0000]',
+  },
+  {
+    label: 'LinkedIn',
+    href: '#',
+    icon: 'linkedin',
+    hoverClass: 'hover:text-[#0A66C2]',
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@ivestorresfoundation',
+    icon: 'tiktok',
+    hoverClass: 'hover:text-[#111111]',
+  },
+] as const;
 ---
 
-<footer class="mt-24 border-t border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.58),rgba(240,232,215,0.88))]">
-  <div class="site-shell grid gap-10 py-14 lg:grid-cols-[1.25fr_0.9fr_0.9fr_0.95fr]">
+<footer class="mt-24 border-t border-white/75 bg-[radial-gradient(circle_at_top_left,rgba(220,163,56,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.72),rgba(240,232,215,0.94))]">
+  <div class="site-shell grid gap-10 py-16 lg:grid-cols-[1.2fr_0.88fr_0.92fr_1.02fr]">
     <div class="max-w-md">
       <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Ives Torres Foundation</p>
       <p class="mt-4 font-display text-3xl tracking-tight text-ink">
@@ -12,9 +46,19 @@ import Button from './Button.astro';
       <p class="mt-4 text-sm leading-7 text-muted">
         Brindamos apoyo comunitario a familias y a sus seres queridos con discapacidad a través de educación, recursos, eventos y redes de apoyo.
       </p>
-      <div class="mt-5 space-y-2 text-sm text-muted">
-        <p>Info@IvesTorres.org</p>
-        <p>(951) 737-0951</p>
+      <div class="mt-5 space-y-3 text-sm text-muted">
+        <p class="flex items-center gap-3">
+          <span class="soft-icon-chip h-10 w-10">
+            <Icon name="mail" class="h-4 w-4" />
+          </span>
+          <span>Info@IvesTorres.org</span>
+        </p>
+        <p class="flex items-center gap-3">
+          <span class="soft-icon-chip h-10 w-10">
+            <Icon name="phone" class="h-4 w-4" />
+          </span>
+          <span>(951) 737-0951</span>
+        </p>
       </div>
       <div class="mt-6">
         <Button href="/contact" variant="secondary">Contáctanos</Button>
@@ -22,7 +66,7 @@ import Button from './Button.astro';
     </div>
 
     <div>
-      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Quick links</h2>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Enlaces rápidos</h2>
       <ul class="mt-4 space-y-3 text-sm text-muted">
         <li><a href="/about" class="transition hover:text-navy">Nosotros</a></li>
         <li><a href="/programs" class="transition hover:text-navy">Programas</a></li>
@@ -34,7 +78,7 @@ import Button from './Button.astro';
     </div>
 
     <div>
-      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Donación</h2>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Apoya</h2>
       <ul class="mt-4 space-y-3 text-sm text-muted">
         <li><a href="/donate" class="transition hover:text-navy">Apoya la misión</a></li>
         <li><a href="/impact" class="transition hover:text-navy">Ver el impacto</a></li>
@@ -50,11 +94,26 @@ import Button from './Button.astro';
     </div>
 
     <div>
-      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Social</h2>
-      <ul class="mt-4 space-y-3 text-sm text-muted">
-        <li><a href="https://www.facebook.com/ivestorresfoundation" target="_blank" rel="noreferrer" aria-label="Facebook de Ives Torres Foundation" class="transition hover:text-navy">Facebook</a></li>
-        <li><a href="https://www.instagram.com/ivestorresfoundation" target="_blank" rel="noreferrer" aria-label="Instagram de Ives Torres Foundation" class="transition hover:text-navy">Instagram</a></li>
-        <li><a href="/news" aria-label="Noticias de Ives Torres Foundation" class="transition hover:text-navy">Noticias</a></li>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Redes sociales</h2>
+      <p class="mt-4 max-w-xs text-sm leading-7 text-muted">
+        Sigue la comunidad y mantente cerca de eventos, historias y recursos compartidos por la fundación.
+      </p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        {socialLinks.map((item) => (
+          <a
+            href={item.href}
+            target={item.href.startsWith('http') ? '_blank' : undefined}
+            rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+            aria-label={item.label}
+            class:list={['social-chip', item.hoverClass]}
+          >
+            <Icon name={item.icon} class="h-5 w-5" />
+          </a>
+        ))}
+      </div>
+      <ul class="mt-5 space-y-3 text-sm text-muted">
+        <li><a href="/news" class="transition hover:text-navy">Noticias</a></li>
+        <li><a href="/events" class="transition hover:text-navy">Eventos</a></li>
       </ul>
     </div>
   </div>

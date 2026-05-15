@@ -30,6 +30,13 @@ const {
     </main>
     <Footer />
     <script is:inline>
+      const siteHeader = document.querySelector('[data-site-header]');
+      const toggleHeaderState = () => {
+        siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+      };
+      toggleHeaderState();
+      window.addEventListener('scroll', toggleHeaderState, { passive: true });
+
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const items = document.querySelectorAll('[data-reveal]');
         const observer = new IntersectionObserver(
@@ -43,9 +50,17 @@ const {
           },
           { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
         );
-        items.forEach((item, index) => {
+        items.forEach((item) => {
           item.classList.add('reveal');
-          item.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 60}ms`);
+          if (!item.style.getPropertyValue('--reveal-delay')) {
+            const group =
+              item.closest('[data-reveal-group]') ||
+              item.closest('section, footer, header, form') ||
+              item.parentElement;
+            const siblings = group ? Array.from(group.querySelectorAll('[data-reveal]')) : [item];
+            const localIndex = siblings.indexOf(item);
+            item.style.setProperty('--reveal-delay', `${Math.min(Math.max(localIndex, 0), 6) * 70}ms`);
+          }
           observer.observe(item);
         });
       }

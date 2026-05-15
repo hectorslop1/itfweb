@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { donationAmounts, donationHighlights, donationMethods, partners } from '../data/site';
 ---
 
 <BaseLayout
-  title="Donate | Ives Torres Foundation"
+  title="Apoya | Ives Torres Foundation"
   description="Apoya la misión de Ives Torres Foundation y ayuda a sostener recursos valiosos para la comunidad."
 >
   <PageHero
@@ -16,6 +17,9 @@ import { donationAmounts, donationHighlights, donationMethods, partners } from '
     description="Hacemos todo lo posible por proporcionar recursos valiosos a nuestras comunidades y las donaciones nos dan la capacidad de seguir adelante con ese trabajo."
     imageSrc="/images/donate/donate-support.jpg"
     imageAlt="Comunidad y apoyo en una actividad de la fundación"
+    imagePosition="center 36%"
+    imageNote="Cada aporte ayuda a sostener recursos, eventos y espacios de acompañamiento."
+    imageNoteIcon="heart"
   />
 
   <section class="site-shell py-12">
@@ -28,10 +32,10 @@ import { donationAmounts, donationHighlights, donationMethods, partners } from '
     </div>
   </section>
 
-  <section class="site-shell py-6">
-    <div class="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-      <article class="section-band section-band-warm overflow-hidden" data-reveal>
-        <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+  <section class="site-shell py-8">
+    <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr] xl:items-start">
+      <article class="section-band section-band-warm" data-reveal-group>
+        <div class="grid gap-10 xl:grid-cols-[1.02fr_0.98fr] xl:items-center">
           <div>
             <div class="eyebrow-chip">Apoya la misión</div>
             <h2 class="mt-5 font-display text-[clamp(2rem,3.8vw,3.4rem)] leading-[1.06] tracking-tight text-ink">
@@ -40,27 +44,33 @@ import { donationAmounts, donationHighlights, donationMethods, partners } from '
             <p class="mt-4 max-w-xl text-base leading-7 text-muted">
               Los datos finales de PayPal y Zelle se confirmarán con la fundación antes del lanzamiento.
             </p>
-            <div class="mt-6 grid gap-3 sm:grid-cols-3">
-              {donationAmounts.map((item) => (
-                <article class="premium-card rounded-[1.5rem] bg-white/88 p-5 ring-1 ring-white/70" data-reveal>
-                  <p class="text-3xl font-bold tracking-tight text-navy">{item.amount}</p>
-                  <p class="mt-3 text-sm leading-6 text-muted">{item.label}</p>
-                </article>
-              ))}
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="tag-badge !border-line !bg-white">Apoyo familiar</span>
+              <span class="tag-badge !border-line !bg-white">Eventos</span>
+              <span class="tag-badge !border-line !bg-white">Recursos</span>
             </div>
           </div>
           <div class="media-frame min-h-[20rem] lg:min-h-[24rem]">
             <img
               src="/images/donate/donate-support.jpg"
               alt="Familias y aliados en una actividad de apoyo comunitario de Ives Torres Foundation"
-              class="h-full w-full object-cover object-center"
+              class="h-full w-full object-cover"
+              style="object-position: center 36%;"
               loading="lazy"
             />
           </div>
         </div>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {donationAmounts.map((item) => (
+            <article class="premium-card rounded-[1.5rem] bg-white/92 p-6 ring-1 ring-white/70" data-reveal>
+              <p class="text-3xl font-bold tracking-tight text-navy">{item.amount}</p>
+              <p class="mt-3 text-sm leading-6 text-muted">{item.label}</p>
+            </article>
+          ))}
+        </div>
       </article>
 
-      <article class="premium-card p-6" data-reveal>
+      <article class="premium-card p-6 lg:p-7" data-reveal id="opciones-de-apoyo">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Opciones de apoyo</p>
         <h2 class="mt-3 font-display text-3xl text-ink">Elige la forma de donar que mejor se adapte a ti.</h2>
         <p class="mt-3 text-sm leading-7 text-muted">
@@ -76,17 +86,23 @@ import { donationAmounts, donationHighlights, donationMethods, partners } from '
                   <p class="mt-3 text-sm leading-7 text-muted">{method.description}</p>
                 </div>
                 <span class="icon-chip" aria-hidden="true">
-                  {index === 0 ? '$' : 'Z'}
+                  <Icon name={index === 0 ? 'heart' : 'spark'} class="h-5 w-5" />
                 </span>
               </div>
               <div class="mt-5">
-                <Button href="/contact" variant={index === 0 ? 'primary' : 'secondary'} class="w-full">
+                <Button href="#confirmacion-apoyo" variant={index === 0 ? 'primary' : 'secondary'} class="w-full">
                   {index === 0 ? 'Donar con PayPal' : 'Donar con Zelle'}
                 </Button>
               </div>
             </article>
           ))}
         </div>
+        <article id="confirmacion-apoyo" class="mt-5 rounded-[1.5rem] border border-line/80 bg-panel/80 p-5">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Información de apoyo</p>
+          <p class="mt-3 text-sm leading-7 text-muted">
+            Los datos finales de PayPal y Zelle se confirmarán con la fundación antes del lanzamiento.
+          </p>
+        </article>
       </article>
     </div>
   </section>

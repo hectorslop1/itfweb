@@ -32,9 +32,9 @@ export const aboutHighlights = [
 ];
 
 export const impactMetrics = [
-  { value: '5,000+', label: 'Members / Miembros' },
-  { value: '50+', label: 'Cities / Ciudades' },
-  { value: '1,000+', label: 'Families / Familia' },
+  { value: '5,000+', label: 'Miembros' },
+  { value: '50+', label: 'Ciudades' },
+  { value: '1,000+', label: 'Familias' },
 ];
 
 export const testimonials = [
@@ -74,9 +74,9 @@ export const donationHighlights = [
 ];
 
 export const donationAmounts = [
-  { amount: '$25', label: 'Aporta a recursos y materiales comunitarios.' },
-  { amount: '$50', label: 'Apoya eventos y espacios de acompañamiento familiar.' },
-  { amount: '$100', label: 'Fortalece educación, inclusión y redes de apoyo.' },
+  { amount: '$25', label: 'Apoya recursos y materiales útiles.' },
+  { amount: '$50', label: 'Ayuda a sostener eventos comunitarios.' },
+  { amount: '$100', label: 'Fortalece educación y redes de apoyo.' },
 ];
 
 export const donationMethods = [

@@ -2,13 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import ContactFormDemo from '../components/ContactFormDemo.astro';
+import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { contactPoints, contactReasons } from '../data/site';
 ---
 
 <BaseLayout
-  title="Contact | Ives Torres Foundation"
+  title="Contacto | Ives Torres Foundation"
   description="Contacta a Ives Torres Foundation para recibir apoyo, colaborar o hacer una consulta."
 >
   <PageHero
@@ -17,27 +18,35 @@ import { contactPoints, contactReasons } from '../data/site';
     description="Siempre estamos felices de conectarnos. Háganos saber cómo podemos ayudarle o cómo le gustaría participar."
     imageSrc="/images/hero/community-hero.jpg"
     imageAlt="Familias en una actividad comunitaria de la fundación"
+    imagePosition="center 34%"
+    imageNote="Escríbenos a Info@IvesTorres.org o llámanos al (951) 737-0951."
+    imageNoteIcon="mail"
   />
 
-  <section class="site-shell py-12">
-    <div class="grid gap-5 md:grid-cols-3">
-      {contactPoints.map((point) => (
-        <article class="info-card" data-reveal>
-          <div class="flex items-start gap-4">
-            <span class="icon-chip" aria-hidden="true">
-              {point.label === 'Email' ? '@' : point.label === 'Teléfono' ? '+' : '#'}
-            </span>
-            <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
-              <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
+  <section class="site-shell pb-6 pt-8">
+    <div class="section-band section-band-soft" data-reveal-group>
+      <div class="grid gap-5 md:grid-cols-3">
+        {contactPoints.map((point) => (
+          <article class="info-card" data-reveal>
+            <div class="flex items-start gap-4">
+              <span class="soft-icon-chip" aria-hidden="true">
+                <Icon
+                  name={point.label === 'Email' ? 'mail' : point.label === 'Teléfono' ? 'phone' : 'map'}
+                  class="h-4 w-4"
+                />
+              </span>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
+                <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
+              </div>
             </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="site-shell py-6">
+  <section class="site-shell py-8">
     <SectionHeading
       eyebrow="Cómo podemos ayudarte"
       title="Elige el motivo de tu mensaje y cuéntanos qué necesitas."
@@ -52,7 +61,7 @@ import { contactPoints, contactReasons } from '../data/site';
     </div>
   </section>
 
-  <section class="site-shell py-12">
+  <section class="site-shell pb-16 pt-10">
     <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <ContactFormDemo />
       <div class="space-y-5">

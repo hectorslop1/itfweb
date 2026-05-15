@@ -15,14 +15,14 @@ import { contactPoints, contactReasons } from '../data/site';
     eyebrow="Contacto"
     title="Estamos aquí para escuchar, orientar y conectar a tu familia con apoyo."
     description="Siempre estamos felices de conectarnos. Háganos saber cómo podemos ayudarle o cómo le gustaría participar."
-    imageSrc="/images/hero-family.svg"
-    imageAlt="Ilustracion de apoyo comunitario y familias"
+    imageSrc="/images/hero/community-hero.jpg"
+    imageAlt="Familias en una actividad comunitaria de la fundación"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-3">
       {contactPoints.map((point) => (
-        <article class="shell-card p-6">
+        <article class="premium-card p-6" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
           <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
         </article>
@@ -49,20 +49,20 @@ import { contactPoints, contactReasons } from '../data/site';
     <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <ContactFormDemo />
       <div class="space-y-5">
-        <article class="shell-panel p-6">
+        <article class="shell-panel p-6" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Apoyo familiar</p>
           <h2 class="mt-3 font-display text-2xl text-ink">Una conversación puede ser el primer paso.</h2>
           <p class="mt-3 text-sm leading-7 text-muted">
             Si no sabes por dónde empezar, podemos orientarte hacia recursos, programas o eventos que se alineen con tu situación.
           </p>
         </article>
-        <article class="shell-card p-6">
+        <article class="premium-card p-6" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Citas y contacto directo</p>
           <p class="mt-3 text-sm leading-7 text-muted">
-            Compartimos atención por cita y un correo directo para familias, aliados y personas interesadas en participar.
+            También puedes escribirnos o llamarnos directamente para pedir información, apoyo o una cita.
           </p>
           <div class="mt-5">
-            <Button href="mailto:Javier.torressme@gmail.com" variant="secondary">Escribir por email</Button>
+            <Button href="mailto:Info@IvesTorres.org" variant="secondary">Escribir por email</Button>
           </div>
         </article>
       </div>

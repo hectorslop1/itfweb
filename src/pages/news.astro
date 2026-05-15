@@ -14,17 +14,22 @@ import { featuredNews } from '../data/news';
     eyebrow="Noticias"
     title="Historias y actualizaciones que ayudan a seguir de cerca a la comunidad."
     description="Historias, apoyos y colaboraciones que muestran el movimiento diario de la fundación."
-    imageSrc="/images/community-event.svg"
-    imageAlt="Ilustracion de noticias y comunidad"
+    imageSrc="/images/community/community-cabe.jpeg"
+    imageAlt="Participantes en una actividad comunitaria"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-5 md:grid-cols-2">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {featuredNews.map((item) => (
-        <article class="shell-card p-6">
+        <article class="premium-card overflow-hidden" data-reveal>
+          <div class="media-frame h-48 rounded-b-none border-0">
+            <img src={item.image} alt={item.title} loading="lazy" />
+          </div>
+          <div class="p-6">
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{item.date}</p>
           <h2 class="mt-3 font-display text-2xl text-ink">{item.title}</h2>
           <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+          </div>
         </article>
       ))}
     </div>
@@ -37,15 +42,15 @@ import { featuredNews } from '../data/news';
       description="La mezcla de historias, agradecimientos y colaboraciones permite seguir el pulso comunitario de ITF."
     />
     <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="shell-panel p-6">
+      <article class="shell-panel p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Anuncios</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Información sobre eventos, fechas y oportunidades para participar.</p>
       </article>
-      <article class="shell-card p-6">
+      <article class="premium-card p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Historias</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Momentos que muestran la fuerza de las familias y la comunidad.</p>
       </article>
-      <article class="shell-panel p-6">
+      <article class="shell-panel p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Aliados</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Colaboraciones y recursos que amplían el alcance de la fundación.</p>
       </article>

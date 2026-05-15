@@ -5,6 +5,7 @@ export type EventPreview = {
   region: string;
   time?: string;
   ctaLabel: string;
+  image: string;
 };
 
 export const upcomingEvents: EventPreview[] = [
@@ -15,6 +16,7 @@ export const upcomingEvents: EventPreview[] = [
       'Un espacio de apoyo, comunidad y empoderamiento para las familias, con información compartida junto al Consulado de México en San Bernardino y TODEC Legal Center.',
     region: 'Inland Empire',
     ctaLabel: 'Ver detalles',
+    image: '/images/events/event-cafecito.jpg',
   },
   {
     date: 'Apr 29',
@@ -24,6 +26,7 @@ export const upcomingEvents: EventPreview[] = [
     region: 'Valle Central',
     time: 'Comunidad',
     ctaLabel: 'Registrarme',
+    image: '/images/community/community-cabe.jpeg',
   },
   {
     date: 'Jun 07',
@@ -32,5 +35,6 @@ export const upcomingEvents: EventPreview[] = [
       'Un evento para fortalecer conexiones entre familias y proveedores de servicios, construyendo puentes de colaboración para la comunidad.',
     region: 'Comunidad ITF',
     ctaLabel: 'Ver detalles',
+    image: '/images/events/event-expo.jpg',
   },
 ];

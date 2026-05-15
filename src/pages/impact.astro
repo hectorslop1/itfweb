@@ -14,14 +14,14 @@ import { impactMetrics, partners, testimonials } from '../data/site';
     eyebrow="Impacto"
     title="Más oportunidades de inclusión que ayudan a cambiar vidas."
     description="Una comunidad amplia, testimonios reales y aliados que fortalecen la participación de las familias."
-    imageSrc="/images/impact-circles.svg"
-    imageAlt="Visual de impacto y comunidad"
+    imageSrc="/images/impact/impact-community.jpg"
+    imageAlt="Participantes de la comunidad de ITF"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {impactMetrics.map((metric) => (
-        <article class="shell-card p-6">
+        <article class="premium-card p-6" data-reveal>
           <p class="text-4xl font-bold tracking-tight text-navy">{metric.value}</p>
           <p class="mt-3 text-sm leading-7 text-muted">{metric.label}</p>
         </article>
@@ -37,7 +37,7 @@ import { impactMetrics, partners, testimonials } from '../data/site';
     />
     <div class="mt-10 grid gap-5 md:grid-cols-2">
       {testimonials.map((testimonial) => (
-        <article class="shell-card p-6">
+        <article class="premium-card p-6" data-reveal>
           <p class="text-lg leading-8 text-ink">"{testimonial.quote}"</p>
           <p class="mt-4 text-sm font-semibold text-navy">{testimonial.name}</p>
           <p class="text-sm text-muted">{testimonial.role}</p>
@@ -54,7 +54,7 @@ import { impactMetrics, partners, testimonials } from '../data/site';
     />
     <div class="mt-8 flex flex-wrap gap-3">
       {partners.map((partner) => (
-        <span class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm">
+        <span class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm" data-reveal>
           {partner}
         </span>
       ))}

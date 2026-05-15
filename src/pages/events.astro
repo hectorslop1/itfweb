@@ -14,18 +14,21 @@ import { upcomingEvents } from '../data/events';
     eyebrow="Eventos"
     title="Eventos pensados para aprender, compartir y fortalecer comunidad."
     description="Los eventos públicos de ITF acercan recursos, conversación, inclusión y apoyo a familias de Inland Empire, Valle Central y otras comunidades."
-    imageSrc="/images/community-event.svg"
+    imageSrc="/images/events/event-expo.jpg"
     imageAlt="Ilustracion de evento comunitario"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-4">
       {upcomingEvents.map((event) => (
-        <article class="shell-card flex flex-col gap-5 p-5 sm:flex-row sm:items-center">
-          <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-panel text-center">
-            <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{event.date}</span>
+        <article class="premium-card grid overflow-hidden lg:grid-cols-[17rem_1fr]" data-reveal>
+          <div class="media-frame h-full rounded-none border-0">
+            <img src={event.image} alt={event.title} loading="lazy" />
           </div>
-          <div class="min-w-0 grow">
+          <div class="min-w-0 grow p-5">
+            <div class="mb-4 inline-flex rounded-2xl bg-panel px-4 py-2 shadow-sm">
+              <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{event.date}</span>
+            </div>
             <div class="flex flex-wrap items-center gap-2">
               <h2 class="font-display text-2xl text-ink">{event.title}</h2>
               <span class="rounded-full bg-sky/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
@@ -56,15 +59,15 @@ import { upcomingEvents } from '../data/events';
       description="Cafecitos, talleres y encuentros que combinan aprendizaje, celebración y acompañamiento."
     />
     <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="shell-card p-6">
+      <article class="premium-card p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Talleres</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Espacios de aprendizaje con explicaciones claras y tiempo para preguntas reales.</p>
       </article>
-      <article class="shell-card p-6">
+      <article class="premium-card p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Convivencia</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Encuentros que fortalecen relaciones, confianza y apoyo entre familias.</p>
       </article>
-      <article class="shell-card p-6">
+      <article class="premium-card p-6" data-reveal>
         <h2 class="font-display text-xl text-ink">Recursos</h2>
         <p class="mt-3 text-sm leading-7 text-muted">Oportunidades para conocer aliados, materiales útiles y servicios disponibles.</p>
       </article>

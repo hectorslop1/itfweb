@@ -14,13 +14,13 @@ const {
 };
 
 const base =
-  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg';
+  'group inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-gold text-[#112640] shadow-soft hover:-translate-y-0.5 hover:bg-[#e3b34e]',
+    'bg-gold text-[#112640] hover:-translate-y-0.5 hover:bg-[#e3b34e]',
   secondary:
-    'bg-white text-navy ring-1 ring-inset ring-line hover:-translate-y-0.5 hover:bg-panel',
+    'bg-white/92 text-navy ring-1 ring-inset ring-line hover:-translate-y-0.5 hover:bg-panel',
   ghost: 'text-navy hover:bg-white/70 hover:text-[#0f2747]',
 };
 
@@ -30,9 +30,11 @@ const classes = `${base} ${variants[variant]} ${className}`.trim();
 {href ? (
   <a href={href} class={classes} {...rest}>
     <slot />
+    <span aria-hidden="true" class="transition duration-300 group-hover:translate-x-1">→</span>
   </a>
 ) : (
   <button class={classes} {...rest}>
     <slot />
+    <span aria-hidden="true" class="transition duration-300 group-hover:translate-x-1">→</span>
   </button>
 )}

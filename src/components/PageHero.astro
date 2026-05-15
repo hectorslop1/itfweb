@@ -9,8 +9,8 @@ const { eyebrow, title, description, imageSrc, imageAlt = '' } = Astro.props as 
 ---
 
 <section class="mx-auto max-w-7xl px-4 pt-14 sm:px-6 lg:px-8 lg:pt-20">
-  <div class="overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-soft">
-    <div class="grid gap-8 bg-[radial-gradient(circle_at_top_left,rgba(214,168,63,0.14),transparent_38%),radial-gradient(circle_at_top_right,rgba(22,53,93,0.12),transparent_34%)] px-6 py-10 sm:px-8 lg:grid-cols-[1fr_22rem] lg:items-end lg:px-10 lg:py-12">
+  <div class="section-band section-band-soft overflow-hidden" data-reveal>
+    <div class="grid gap-8 bg-[radial-gradient(circle_at_top_left,rgba(214,168,63,0.14),transparent_38%),radial-gradient(circle_at_top_right,rgba(22,53,93,0.12),transparent_34%)] lg:grid-cols-[1fr_24rem] lg:items-end">
       <div class="max-w-3xl">
         {eyebrow && (
           <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">
@@ -23,7 +23,7 @@ const { eyebrow, title, description, imageSrc, imageAlt = '' } = Astro.props as 
         {description && <p class="mt-4 max-w-2xl text-base leading-7 text-muted">{description}</p>}
       </div>
       {imageSrc ? (
-        <div class="overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/70 shadow-soft">
+        <div class="media-frame min-h-[18rem]">
           <img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover" loading="lazy" />
         </div>
       ) : (

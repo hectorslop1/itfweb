@@ -26,7 +26,7 @@ export const values = [
 ];
 
 export const aboutHighlights = [
-  'Ives Torres es un hombre con síndrome de Down y la inspiración detrás de la fundación.',
+  'Ives Torres es la inspiración detrás de la fundación.',
   'La comunidad de ITF acompaña a familias en Inland Empire, Valle Central y otras ciudades de California.',
   'El trabajo de la fundación une recursos, eventos, educación y redes de apoyo.',
 ];
@@ -73,6 +73,23 @@ export const donationHighlights = [
   'See how your support is directly impacting the communities you care about.',
 ];
 
+export const donationAmounts = [
+  { amount: '$25', label: 'Aporta a recursos y materiales comunitarios.' },
+  { amount: '$50', label: 'Apoya eventos y espacios de acompañamiento familiar.' },
+  { amount: '$100', label: 'Fortalece educación, inclusión y redes de apoyo.' },
+];
+
+export const donationMethods = [
+  {
+    title: 'PayPal',
+    description: 'Opción principal para donar de forma rápida y familiar.',
+  },
+  {
+    title: 'Zelle',
+    description: 'Opción secundaria para quienes prefieren transferir de manera directa.',
+  },
+];
+
 export const contactReasons = [
   'Necesito apoyo',
   'Solicitar cita',
@@ -82,7 +99,7 @@ export const contactReasons = [
 ];
 
 export const contactPoints = [
-  { label: 'Email directo', value: 'Javier.torressme@gmail.com' },
-  { label: 'Horario de citas', value: 'Lunes a sábado · 9:00 am - 5:00 pm' },
+  { label: 'Email', value: 'Info@IvesTorres.org' },
+  { label: 'Teléfono', value: '(951) 737-0951' },
   { label: 'Áreas de servicio', value: 'Inland Empire y Valle Central' },
 ];

@@ -5,7 +5,7 @@ import '../styles/global.css';
 
 const {
   title = 'Ives Torres Foundation',
-  description = 'A warm, modern, bilingual nonprofit website for Ives Torres Foundation.',
+  description = 'Sitio bilingüe de Ives Torres Foundation con apoyo, recursos y comunidad para las familias.',
 } = Astro.props as {
   title?: string;
   description?: string;
@@ -23,7 +23,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Ir al contenido</a>
     <Header />
     <main id="main">
       <slot />

@@ -68,9 +68,9 @@ export const partners = [
 ];
 
 export const donationHighlights = [
-  'We do our best to provide valuable resources to our communities and your donations give us the ability to pursue this mission.',
-  'Your support keeps our mission alive.',
-  'See how your support is directly impacting the communities you care about.',
+  'Tu apoyo ayuda a sostener recursos valiosos para las familias y comunidades que acompaña la fundación.',
+  'Cada aporte fortalece espacios de aprendizaje, conexión y acompañamiento comunitario.',
+  'Donar es una manera directa de respaldar la misión y el trabajo que se comparte con la comunidad.',
 ];
 
 export const donationAmounts = [

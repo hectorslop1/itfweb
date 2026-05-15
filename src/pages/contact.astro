@@ -19,18 +19,25 @@ import { contactPoints, contactReasons } from '../data/site';
     imageAlt="Familias en una actividad comunitaria de la fundación"
   />
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <section class="site-shell py-12">
     <div class="grid gap-5 md:grid-cols-3">
       {contactPoints.map((point) => (
-        <article class="premium-card p-6" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
-          <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
+        <article class="info-card" data-reveal>
+          <div class="flex items-start gap-4">
+            <span class="icon-chip" aria-hidden="true">
+              {point.label === 'Email' ? '@' : point.label === 'Teléfono' ? '+' : '#'}
+            </span>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
+              <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
+            </div>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+  <section class="site-shell py-6">
     <SectionHeading
       eyebrow="Cómo podemos ayudarte"
       title="Elige el motivo de tu mensaje y cuéntanos qué necesitas."
@@ -38,18 +45,18 @@ import { contactPoints, contactReasons } from '../data/site';
     />
     <div class="mt-8 flex flex-wrap gap-3">
       {contactReasons.map((reason) => (
-        <span class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm">
+        <span class="tag-badge !border-line !bg-white !px-4 !py-2 !text-sm normal-case tracking-normal text-muted">
           {reason}
         </span>
       ))}
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <section class="site-shell py-12">
     <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
       <ContactFormDemo />
       <div class="space-y-5">
-        <article class="shell-panel p-6" data-reveal>
+        <article class="section-band section-band-soft p-6" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Apoyo familiar</p>
           <h2 class="mt-3 font-display text-2xl text-ink">Una conversación puede ser el primer paso.</h2>
           <p class="mt-3 text-sm leading-7 text-muted">

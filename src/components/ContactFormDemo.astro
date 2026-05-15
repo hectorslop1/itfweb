@@ -11,6 +11,14 @@ const reasons = [
 ---
 
 <form class="shell-card p-6 sm:p-8" aria-label="Formulario de contacto">
+  <div class="mb-6 flex flex-col gap-3 border-b border-line/70 pb-6 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-gold">Escríbenos</p>
+      <h2 class="mt-2 font-display text-2xl text-ink">Cuéntanos cómo podemos ayudarte.</h2>
+    </div>
+    <div class="tag-badge">Respuesta por email o teléfono</div>
+  </div>
+
   <div class="grid gap-5 sm:grid-cols-2">
     <label class="block">
       <span class="mb-2 block text-sm font-semibold text-ink">Nombre</span>
@@ -43,9 +51,9 @@ const reasons = [
   </label>
 
   <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-    <p class="text-sm leading-6 text-muted">
+    <p class="max-w-xl text-sm leading-6 text-muted">
       Nuestro equipo revisa cada mensaje con cuidado para orientar a familias, compartir recursos y coordinar citas.
     </p>
-    <Button>Enviar mensaje</Button>
+    <Button class="w-full sm:w-auto">Enviar mensaje</Button>
   </div>
 </form>

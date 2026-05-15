@@ -1,0 +1,42 @@
+---
+import Button from './Button.astro';
+---
+
+<footer class="mt-20 border-t border-white/70 bg-white/60">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
+    <div class="max-w-md">
+      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Ives Torres Foundation</p>
+      <p class="mt-4 font-display text-2xl tracking-tight text-ink">
+        Helping families find resources, education, and community with care.
+      </p>
+      <p class="mt-4 text-sm leading-7 text-muted">
+        This first build sets the visual foundation for a bilingual nonprofit site that feels warm,
+        trustworthy, and easy to navigate.
+      </p>
+      <div class="mt-6">
+        <Button href="/contact" variant="secondary">Contact us</Button>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Quick links</h2>
+      <ul class="mt-4 space-y-3 text-sm text-muted">
+        <li><a href="/about" class="transition hover:text-navy">About</a></li>
+        <li><a href="/programs" class="transition hover:text-navy">Programs</a></li>
+        <li><a href="/events" class="transition hover:text-navy">Events</a></li>
+        <li><a href="/resources" class="transition hover:text-navy">Resources</a></li>
+        <li><a href="/donate" class="transition hover:text-navy">Donate</a></li>
+        <li><a href="/news" class="transition hover:text-navy">News</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-ink">Support</h2>
+      <ul class="mt-4 space-y-3 text-sm text-muted">
+        <li>PayPal: primary donation channel</li>
+        <li>Zelle: secondary donation channel</li>
+        <li>Spanish-first, English-ready site structure</li>
+      </ul>
+    </div>
+  </div>
+</footer>

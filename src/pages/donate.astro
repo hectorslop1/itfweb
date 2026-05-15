@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { donationAmounts, donationMethods } from '../data/site';
+---
+
+<BaseLayout
+  title="Donate | Ives Torres Foundation"
+  description="Clear, warm donation information with suggested amounts and giving methods."
+>
+  <PageHero
+    eyebrow="Donate"
+    title="Giving that feels simple, trustworthy, and community-focused."
+    description="This page keeps donation options clear and accessible with placeholder methods and impact-based examples."
+  />
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-5 md:grid-cols-2">
+      {donationMethods.map((method) => (
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{method.name}</p>
+          <p class="mt-3 text-sm leading-7 text-muted">{method.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Suggested amounts"
+      title="A few example amounts help give structure without pressure."
+      description="These placeholder amounts can later connect to PayPal or donation instructions."
+    />
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      {donationAmounts.map((item) => (
+        <article class="rounded-[1.5rem] border border-white/80 bg-panel p-6">
+          <p class="text-3xl font-bold tracking-tight text-navy">{item.amount}</p>
+          <p class="mt-3 text-sm leading-7 text-muted">{item.impact}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
+      <h2 class="font-display text-3xl tracking-tight">Why give?</h2>
+      <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
+        Donations help the foundation keep providing practical family support, bilingual resources, and community events.
+      </p>
+      <div class="mt-6">
+        <Button href="/contact" variant="secondary">Questions about giving</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

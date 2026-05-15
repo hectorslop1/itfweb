@@ -1,0 +1,59 @@
+---
+import Button from './Button.astro';
+import { ctas, navigation } from '../data/navigation';
+---
+
+<header class="sticky top-0 z-40 border-b border-white/60 bg-bg/90 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-3" aria-label="Ives Torres Foundation home">
+      <span class="grid h-11 w-11 place-items-center rounded-2xl bg-navy text-sm font-bold text-white shadow-soft">
+        ITF
+      </span>
+      <span class="flex flex-col leading-tight">
+        <span class="font-display text-base text-ink">Ives Torres Foundation</span>
+        <span class="text-xs uppercase tracking-[0.24em] text-muted">Warm nonprofit redesign</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {navigation.map((item) => (
+        <a href={item.href} class="text-sm font-medium text-muted transition hover:text-navy">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      {ctas.map((item) => (
+        <Button href={item.href} variant={item.variant as 'primary' | 'secondary'}>
+          {item.label}
+        </Button>
+      ))}
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary class="list-none rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm">
+        Menu
+      </summary>
+      <div class="absolute right-4 mt-3 w-[min(20rem,calc(100vw-2rem))] rounded-3xl border border-line bg-white p-4 shadow-soft">
+        <nav class="flex flex-col gap-2" aria-label="Mobile">
+          {navigation.map((item) => (
+            <a
+              href={item.href}
+              class="rounded-2xl px-3 py-2 text-sm font-medium text-muted transition hover:bg-panel hover:text-navy"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div class="mt-4 flex flex-col gap-2">
+          {ctas.map((item) => (
+            <Button href={item.href} variant={item.variant as 'primary' | 'secondary'} class="w-full">
+              {item.label}
+            </Button>
+          ))}
+        </div>
+      </div>
+    </details>
+  </div>
+</header>

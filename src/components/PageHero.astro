@@ -20,21 +20,21 @@ const { imagePosition = 'center', imageNote, imageNoteIcon = 'spark' } = Astro.p
 ---
 
 <section class="hero-shell pt-10 lg:pt-14" data-reveal-group>
-  <div class="section-band page-hero-card section-band-soft overflow-hidden" data-reveal style="--reveal-delay: 0ms;">
-    <div class="grid gap-6 bg-[radial-gradient(circle_at_top_left,rgba(214,168,63,0.14),transparent_38%),radial-gradient(circle_at_top_right,rgba(22,53,93,0.12),transparent_34%)] lg:grid-cols-[minmax(0,1fr)_36.5rem] lg:items-center xl:grid-cols-[minmax(0,1fr)_38.5rem] xl:gap-10">
-      <div class="max-w-[40rem]">
+  <div class="section-band page-hero-card section-band-soft overflow-hidden lg:min-h-[37rem]" data-reveal style="--reveal-delay: 0ms;">
+    <div class="grid gap-6 bg-[radial-gradient(circle_at_top_left,rgba(214,168,63,0.14),transparent_38%),radial-gradient(circle_at_top_right,rgba(22,53,93,0.12),transparent_34%)] lg:min-h-[33rem] lg:grid-cols-[minmax(0,1fr)_38rem] lg:items-center xl:grid-cols-[minmax(0,1fr)_40rem]">
+      <div class="max-w-[34rem] lg:flex lg:min-h-[29rem] lg:flex-col lg:justify-center">
         {eyebrow && (
           <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold" data-reveal style="--reveal-delay: 0ms;">
             {eyebrow}
           </p>
         )}
-        <h1 class="mt-3 max-w-[38rem] font-display text-[clamp(2.15rem,3.35vw,3.72rem)] leading-[1.06] tracking-tight text-ink" data-reveal style="--reveal-delay: 70ms; text-wrap: balance;">
+        <h1 class="mt-3 max-w-[33rem] font-display text-[clamp(2.2rem,3.15vw,3.5rem)] leading-[1.06] tracking-tight text-ink" data-reveal style="--reveal-delay: 70ms; text-wrap: balance;">
           {title}
         </h1>
-        {description && <p class="mt-4 max-w-2xl text-[0.98rem] leading-7 text-muted sm:text-[1.01rem]" data-reveal style="--reveal-delay: 140ms;">{description}</p>}
+        {description && <p class="mt-4 max-w-[31rem] text-[0.98rem] leading-7 text-muted sm:text-[1.01rem]" data-reveal style="--reveal-delay: 140ms;">{description}</p>}
       </div>
       {imageSrc ? (
-        <div class="media-frame min-h-[16rem] lg:min-h-[18.75rem]" data-reveal style="--reveal-delay: 120ms;">
+        <div class="media-frame min-h-[17rem] lg:h-[31rem] lg:min-h-0" data-reveal style="--reveal-delay: 120ms;">
           <img src={imageSrc} alt={imageAlt} class="h-full w-full object-cover" style={`object-position: ${imagePosition};`} loading="lazy" />
           {imageNote && (
             <div class="image-note">

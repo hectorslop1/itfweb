@@ -9,22 +9,22 @@ export const featuredPrograms: Program[] = [
   {
     title: 'Padres con Poder',
     description:
-      'Family learning sessions focused on advocacy, confidence, and navigating systems with support.',
-    audience: 'Families seeking practical guidance',
-    label: 'Program',
+      'Sesiones de acompanamiento para padres y cuidadores que buscan herramientas para abogar por sus seres queridos con confianza.',
+    audience: 'Padres, madres y cuidadores que necesitan orientacion practica',
+    label: 'Programa',
   },
   {
     title: 'Talleres educativos',
     description:
-      'Practical workshops about special education, technology, self-advocacy, and local services.',
-    audience: 'Parents, caregivers, and allies',
-    label: 'Workshop',
+      'Talleres sobre educacion especial, tecnologia, inclusion, autodefensa y servicios disponibles en la comunidad.',
+    audience: 'Familias, cuidadores y aliados comunitarios',
+    label: 'Taller',
   },
   {
     title: 'Eventos comunitarios',
     description:
-      'Inclusive gatherings that bring families together through shared learning and celebration.',
-    audience: 'Families building connection',
-    label: 'Community',
+      'Encuentros inclusivos que fortalecen la comunidad, celebran logros y acercan recursos a las familias.',
+    audience: 'Familias que buscan pertenencia, apoyo y conexion',
+    label: 'Comunidad',
   },
 ];

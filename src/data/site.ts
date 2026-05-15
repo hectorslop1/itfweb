@@ -1,92 +1,93 @@
 export const aboutSections = [
   {
-    title: 'Our story',
-    text: 'Ives Torres Foundation supports Hispanic families with accessible education, practical guidance, and community connection.',
+    title: 'Nuestra historia',
+    text: 'Ives Torres Foundation nace del deseo de acercar informacion, dignidad y acompanamiento a familias hispanas con seres queridos con discapacidad.',
   },
   {
-    title: 'Our mission',
-    text: 'Help families move through disability systems with more clarity, dignity, and confidence.',
+    title: 'Nuestra mision',
+    text: 'Ayudar a las familias a navegar sistemas de discapacidad, educacion y apoyo con mas claridad, confianza y comunidad.',
   },
   {
-    title: 'Our vision',
-    text: 'A community where families feel informed, respected, and never alone in the process.',
+    title: 'Nuestra vision',
+    text: 'Construir una comunidad donde las familias se sientan informadas, respetadas y acompanadas en cada etapa.',
   },
 ];
 
 export const values = [
-  'Trust first',
-  'Warm guidance',
-  'Accessible information',
-  'Bilingual communication',
+  'Confianza',
+  'Calidez',
+  'Informacion accesible',
+  'Comunicacion bilingue',
 ];
 
 export const teamMembers = [
   {
     name: 'Ives Torres',
-    role: 'Founder',
-    bio: 'Community leader focused on practical support and family connection.',
+    role: 'Fundadora',
+    bio: 'Lider comunitaria enfocada en orientar a familias con cercania, respeto y accion concreta.',
   },
   {
-    name: 'Community partners',
-    role: 'Collaborators',
-    bio: 'Local allies who help extend programs, outreach, and trust.',
+    name: 'Aliados comunitarios',
+    role: 'Colaboradores',
+    bio: 'Escuelas, organizaciones y lideres locales que ayudan a ampliar el alcance de programas y recursos.',
   },
 ];
 
 export const impactMetrics = [
-  { value: '100+', label: 'Families reached through educational moments' },
-  { value: '2', label: 'California regions highlighted in the first build' },
-  { value: 'Bilingual', label: 'Content direction shaped for Spanish and English' },
-  { value: 'Warm', label: 'Tone centered on trust, clarity, and belonging' },
+  { value: '100+', label: 'Familias alcanzadas por talleres y orientacion comunitaria' },
+  { value: '2', label: 'Regiones con presencia activa y oportunidades de crecimiento' },
+  { value: 'Bilingue', label: 'Apoyo pensado para familias hispanas y aliados en ingles' },
+  { value: 'Cercano', label: 'Un enfoque humano que prioriza dignidad, escucha y confianza' },
 ];
 
 export const testimonials = [
   {
-    quote: 'The kind of support that makes it easier to ask questions and keep going.',
-    name: 'Family member',
-    role: 'Community voice',
+    quote: 'Aqui encontramos informacion clara y un espacio donde hacer preguntas sin pena.',
+    name: 'Madre participante',
+    role: 'Voz de la comunidad',
   },
   {
-    quote: 'A welcoming space that makes families feel respected and heard.',
-    name: 'Partner',
-    role: 'Local collaborator',
+    quote: 'La fundacion crea puentes entre familias, recursos y aliados con una energia muy humana.',
+    name: 'Aliado comunitario',
+    role: 'Colaborador local',
   },
 ];
 
 export const partners = [
-  'Schools',
-  'Regional centers',
-  'Community organizations',
-  'Family advocates',
+  'Escuelas',
+  'Centros regionales',
+  'Organizaciones comunitarias',
+  'Defensores de familias',
 ];
 
 export const donationAmounts = [
-  { amount: '$25', impact: 'Helps share one family resource kit.' },
-  { amount: '$50', impact: 'Supports a bilingual workshop handout set.' },
-  { amount: '$100', impact: 'Helps host a community learning session.' },
+  { amount: '$25', impact: 'Ayuda a compartir materiales impresos y recursos basicos con una familia.' },
+  { amount: '$50', impact: 'Apoya materiales bilingues para un taller educativo comunitario.' },
+  { amount: '$100', impact: 'Contribuye a sostener una sesion de apoyo, orientacion o encuentro familiar.' },
+  { amount: '$250', impact: 'Fortalece eventos comunitarios con informacion, logistica y alcance local.' },
 ];
 
 export const donationMethods = [
   {
     name: 'PayPal',
-    detail: 'Primary donation method for quick, secure giving.',
+    detail: 'Opcion principal para donar en linea de forma rapida, segura y familiar para muchas familias.',
   },
   {
     name: 'Zelle',
-    detail: 'Secondary option for direct giving by mobile transfer.',
+    detail: 'Opcion secundaria para apoyo directo mediante transferencia movil o bancaria.',
   },
 ];
 
 export const contactReasons = [
-  'I need support',
-  'I want to volunteer',
-  'I want to donate',
-  'I represent an organization',
-  'General question',
+  'Necesito apoyo',
+  'Quiero ser voluntario',
+  'Quiero donar',
+  'Represento a una organizacion',
+  'Pregunta general',
 ];
 
 export const contactPoints = [
-  { label: 'Email', value: 'info@ivestorresfoundation.org' },
-  { label: 'Service area', value: 'California families and communities' },
-  { label: 'Language', value: 'Spanish and English' },
+  { label: 'Correo', value: 'info@ivestorresfoundation.org' },
+  { label: 'Area de servicio', value: 'Familias y comunidades en California' },
+  { label: 'Idiomas', value: 'Espanol e ingles' },
 ];

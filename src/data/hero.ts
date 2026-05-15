@@ -1,20 +1,20 @@
 export const heroStats = [
-  { value: 'Bilingue', label: 'Spanish-first, English-ready' },
-  { value: 'California', label: 'Serving families across the state' },
-  { value: 'Community', label: 'Support, education, and connection' },
+  { value: 'Bilingue', label: 'Atencion en espanol con apoyo en ingles' },
+  { value: 'California', label: 'Acompaniando a familias en varias regiones del estado' },
+  { value: 'Comunidad', label: 'Recursos, educacion y redes de apoyo cercanas' },
 ];
 
 export const heroHighlights = [
   {
-    title: 'Warm, clear guidance',
-    description: 'Families should know exactly where to start and what to do next.',
+    title: 'Orientacion clara',
+    description: 'Apoyo practico para entender servicios, escuela, comunidad y proximos pasos.',
   },
   {
-    title: 'Bilingual by default',
-    description: 'Spanish-first content with English support that feels deliberate, not bolted on.',
+    title: 'Comunidad bilingue',
+    description: 'Una experiencia pensada para familias hispanas sin cerrar la puerta a aliados en ingles.',
   },
   {
-    title: 'Trust over noise',
-    description: 'The design should feel human, welcoming, and easy to scan on any device.',
+    title: 'Cercania y confianza',
+    description: 'Informacion facil de encontrar, con un tono calido, humano y respetuoso.',
   },
 ];

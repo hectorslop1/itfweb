@@ -6,13 +6,13 @@ export type FacebookHighlight = {
 
 export const facebookHighlights: FacebookHighlight[] = [
   {
-    title: 'Community moments',
-    description: 'A curated photo update from a recent family gathering.',
+    title: 'Momentos de comunidad',
+    description: 'Una mirada a los encuentros donde las familias aprenden, comparten y se sienten acompanadas.',
     type: 'Photo',
   },
   {
-    title: 'Event recap',
-    description: 'A short highlight showing learning, celebration, and shared support.',
+    title: 'Resumen de evento',
+    description: 'Historias cortas que muestran aprendizaje, alegria y apoyo comunitario en accion.',
     type: 'Video',
   },
 ];

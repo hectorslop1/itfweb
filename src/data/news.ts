@@ -6,13 +6,13 @@ export type NewsItem = {
 
 export const featuredNews: NewsItem[] = [
   {
-    title: 'New family workshop series',
-    description: 'Placeholder announcement for upcoming educational sessions and support circles.',
+    title: 'Serie de talleres para familias este verano',
+    description: 'La fundacion preparara encuentros bilingues para conectar a las familias con recursos, informacion y comunidad.',
     date: 'May 2026',
   },
   {
-    title: 'Community partners highlighted',
-    description: 'Placeholder story showing how collaborators strengthen the foundation’s reach.',
+    title: 'Aliados comunitarios fortalecen el alcance de ITF',
+    description: 'La colaboracion con escuelas, organizaciones y lideres locales ayuda a acercar apoyo confiable a mas familias.',
     date: 'Apr 2026',
   },
 ];

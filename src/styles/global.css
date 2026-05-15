@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #f7f9fc;
+  --color-bg: #f6f3ea;
   --color-surface: #ffffff;
-  --color-panel: #eef5fb;
+  --color-panel: #eef4f8;
   --color-ink: #10233e;
   --color-muted: #52637c;
   --color-line: rgba(16, 35, 62, 0.12);
   --color-navy: #16355d;
-  --color-gold: #d6a83f;
-  --color-sky: #dfeefa;
+  --color-gold: #dca338;
+  --color-sky: #d9eaf6;
   --font-sans: 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-display: 'Trebuchet MS', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -24,8 +24,9 @@ body {
   margin: 0;
   color: var(--color-ink);
   background:
-    radial-gradient(circle at top left, rgba(214, 168, 63, 0.12), transparent 30%),
-    radial-gradient(circle at top right, rgba(22, 53, 93, 0.1), transparent 32%),
+    radial-gradient(circle at top left, rgba(220, 163, 56, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(22, 53, 93, 0.08), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(90, 134, 168, 0.1), transparent 24%),
     var(--color-bg);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
@@ -45,6 +46,11 @@ body::before {
 
 a {
   color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 :focus-visible {
@@ -70,6 +76,26 @@ a {
 
 .skip-link:focus {
   top: 1rem;
+}
+
+@layer components {
+  .shell-card {
+    @apply rounded-[1.75rem] border border-white/80 bg-white/90 shadow-soft backdrop-blur;
+  }
+
+  .shell-panel {
+    @apply rounded-[1.75rem] border border-line bg-panel;
+  }
+
+  .field-input,
+  .field-select,
+  .field-textarea {
+    @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink shadow-sm transition placeholder:text-muted focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold focus:ring-opacity-20;
+  }
+
+  .field-textarea {
+    @apply min-h-[10rem] resize-y;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

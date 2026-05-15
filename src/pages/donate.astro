@@ -8,20 +8,30 @@ import { donationAmounts, donationMethods } from '../data/site';
 
 <BaseLayout
   title="Donate | Ives Torres Foundation"
-  description="Clear, warm donation information with suggested amounts and giving methods."
+  description="Apoya a Ives Torres Foundation con PayPal o Zelle y ayuda a sostener recursos, talleres y comunidad."
 >
   <PageHero
-    eyebrow="Donate"
-    title="Giving that feels simple, trustworthy, and community-focused."
-    description="This page keeps donation options clear and accessible with placeholder methods and impact-based examples."
+    eyebrow="Donar"
+    title="Tu generosidad ayuda a que mas familias encuentren orientacion, recursos y comunidad."
+    description="Cada donativo apoya talleres, materiales bilingues, eventos comunitarios y acompanamiento para familias hispanas con seres queridos con discapacidad."
+    imageSrc="/images/impact-circles.svg"
+    imageAlt="Visual de apoyo y donacion comunitaria"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-2">
-      {donationMethods.map((method) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{method.name}</p>
+      {donationMethods.map((method, index) => (
+        <article class="shell-card p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
+            {index === 0 ? 'Opcion principal' : 'Opcion secundaria'}
+          </p>
+          <h2 class="mt-3 font-display text-2xl text-ink">{method.name}</h2>
           <p class="mt-3 text-sm leading-7 text-muted">{method.detail}</p>
+          <div class="mt-5">
+            <Button href="/contact" variant={index === 0 ? 'primary' : 'secondary'}>
+              {index === 0 ? 'Donar con PayPal' : 'Solicitar datos de Zelle'}
+            </Button>
+          </div>
         </article>
       ))}
     </div>
@@ -29,13 +39,13 @@ import { donationAmounts, donationMethods } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Suggested amounts"
-      title="A few example amounts help give structure without pressure."
-      description="These placeholder amounts can later connect to PayPal or donation instructions."
+      eyebrow="Cantidades sugeridas"
+      title="Pequenas y grandes aportaciones tienen un impacto real."
+      description="Estas cantidades ayudan a imaginar como una contribucion se transforma en materiales, espacios y acompanamiento."
     />
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
+    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {donationAmounts.map((item) => (
-        <article class="rounded-[1.5rem] border border-white/80 bg-panel p-6">
+        <article class="rounded-[1.5rem] border border-white/80 bg-panel p-6 shadow-sm">
           <p class="text-3xl font-bold tracking-tight text-navy">{item.amount}</p>
           <p class="mt-3 text-sm leading-7 text-muted">{item.impact}</p>
         </article>
@@ -43,14 +53,34 @@ import { donationAmounts, donationMethods } from '../data/site';
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div class="grid gap-8 rounded-[2.25rem] bg-white/80 p-8 shadow-soft ring-1 ring-white/70 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <div>
+        <SectionHeading
+          eyebrow="Por que donar"
+          title="Donar significa acercar apoyo digno a familias que necesitan ser escuchadas y orientadas."
+          description="Tu apoyo ayuda a sostener eventos, materiales, espacios de aprendizaje y una presencia comunitaria confiable."
+        />
+      </div>
+      <div class="shell-card p-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Impacto de tu apoyo</p>
+        <ul class="mt-4 space-y-3 text-sm leading-7 text-muted">
+          <li>Materiales bilingues para talleres y encuentros familiares</li>
+          <li>Espacios comunitarios para orientacion y acompanamiento</li>
+          <li>Recursos claros para navegar escuela, servicios y comunidad</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Why give?</h2>
+      <h2 class="font-display text-3xl tracking-tight">Tienes preguntas sobre como apoyar?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-        Donations help the foundation keep providing practical family support, bilingual resources, and community events.
+        Estamos disponibles para orientar a donantes, familias y aliados que quieran contribuir al trabajo de la fundacion.
       </p>
       <div class="mt-6">
-        <Button href="/contact" variant="secondary">Questions about giving</Button>
+        <Button href="/contact" variant="secondary">Hablar con el equipo</Button>
       </div>
     </div>
   </section>

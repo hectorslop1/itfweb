@@ -8,18 +8,20 @@ import { impactMetrics, partners, testimonials } from '../data/site';
 
 <BaseLayout
   title="Impact | Ives Torres Foundation"
-  description="Show the foundation's impact through metrics, testimonials, and partner support."
+  description="Historias, resultados y colaboraciones que reflejan el impacto de la fundacion."
 >
   <PageHero
-    eyebrow="Impact"
-    title="Impact content that builds trust and shows the foundation's reach."
-    description="These placeholders create room for future numbers, stories, and partner recognition without overloading the page."
+    eyebrow="Impacto"
+    title="El impacto se siente cuando una familia encuentra claridad, apoyo y esperanza."
+    description="Cada taller, conversacion y alianza ayuda a construir una comunidad mas informada, conectada y fuerte."
+    imageSrc="/images/impact-circles.svg"
+    imageAlt="Visual de impacto y comunidad"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {impactMetrics.map((metric) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
+        <article class="shell-card p-6">
           <p class="text-4xl font-bold tracking-tight text-navy">{metric.value}</p>
           <p class="mt-3 text-sm leading-7 text-muted">{metric.label}</p>
         </article>
@@ -29,14 +31,14 @@ import { impactMetrics, partners, testimonials } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Testimonials"
-      title="Short voices can make the page feel more human and grounded."
-      description="These placeholder quotes are intentionally short and easy to scan."
+      eyebrow="Voces de la comunidad"
+      title="Las historias humanas revelan lo que significa sentirse acompanado."
+      description="Escuchar a familias y aliados nos recuerda por que este trabajo importa tanto."
     />
     <div class="mt-10 grid gap-5 md:grid-cols-2">
       {testimonials.map((testimonial) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
-          <p class="text-lg leading-8 text-ink">“{testimonial.quote}”</p>
+        <article class="shell-card p-6">
+          <p class="text-lg leading-8 text-ink">"{testimonial.quote}"</p>
           <p class="mt-4 text-sm font-semibold text-navy">{testimonial.name}</p>
           <p class="text-sm text-muted">{testimonial.role}</p>
         </article>
@@ -46,9 +48,9 @@ import { impactMetrics, partners, testimonials } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Partners"
-      title="Partnerships help extend the foundation's reach and credibility."
-      description="A later version can use logos, but this first step uses simple, accessible text."
+      eyebrow="Alianzas"
+      title="La comunidad crece cuando se tejen puentes entre familias y organizaciones."
+      description="Las alianzas ayudan a extender recursos, confianza y oportunidades de apoyo."
     />
     <div class="mt-8 flex flex-wrap gap-3">
       {partners.map((partner) => (
@@ -59,14 +61,14 @@ import { impactMetrics, partners, testimonials } from '../data/site';
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">More impact content can grow from here.</h2>
+      <h2 class="font-display text-3xl tracking-tight">Tu apoyo tambien forma parte del impacto.</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-        Reports, stories, and featured outcomes can be added later through the CMS when the structure is ready.
+        Donantes, voluntarios y aliados hacen posible que mas familias encuentren acompanamiento y recursos utiles.
       </p>
       <div class="mt-6">
-        <Button href="/contact" variant="secondary">Talk with us</Button>
+        <Button href="/donate" variant="secondary">Ver como apoyar</Button>
       </div>
     </div>
   </section>

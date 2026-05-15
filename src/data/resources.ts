@@ -5,27 +5,27 @@ export type ResourceTopic = {
 
 export const resourceTopics: ResourceTopic[] = [
   {
-    title: 'Special education',
-    description: 'Practical guidance for families navigating school supports and advocacy.',
+    title: 'Educacion especial',
+    description: 'Guias para entender apoyos escolares, reuniones, derechos y formas de abogar con confianza.',
   },
   {
-    title: 'Regional centers',
-    description: 'Clear starter information for services, eligibility, and follow-up steps.',
+    title: 'Centros regionales',
+    description: 'Informacion clara para comenzar procesos, entender elegibilidad y prepararse para citas importantes.',
   },
   {
-    title: 'Self-advocacy',
-    description: 'Tools that help people speak up with confidence and support.',
+    title: 'Autodefensa',
+    description: 'Herramientas para ayudar a personas con discapacidad y a sus familias a expresar necesidades y metas.',
   },
   {
-    title: 'Technology',
-    description: 'Accessible tools and digital learning resources that remove friction.',
+    title: 'Tecnologia',
+    description: 'Recursos digitales y tecnologia accesible para aprender, comunicarse y participar mas plenamente.',
   },
   {
-    title: 'Guides',
-    description: 'Downloadable and readable reference materials for common questions.',
+    title: 'Guias',
+    description: 'Materiales sencillos para consultar en casa cuando surgen preguntas urgentes o nuevas decisiones.',
   },
   {
     title: 'Videos',
-    description: 'Short instructional content families can revisit when they need it.',
+    description: 'Explicaciones breves y faciles de compartir con otros familiares, cuidadores o aliados.',
   },
 ];

@@ -8,18 +8,20 @@ import { featuredNews } from '../data/news';
 
 <BaseLayout
   title="News | Ives Torres Foundation"
-  description="Read placeholder news and community updates."
+  description="Noticias, historias y actualizaciones de la comunidad de Ives Torres Foundation."
 >
   <PageHero
-    eyebrow="News"
-    title="News and stories that keep the community informed."
-    description="This page uses mock updates for the first version so the layout is ready for future posts."
+    eyebrow="Noticias"
+    title="Historias y actualizaciones para mantener cerca a la comunidad."
+    description="Las noticias de la fundacion comparten aprendizajes, eventos, colaboraciones y avances que importan a las familias."
+    imageSrc="/images/community-event.svg"
+    imageAlt="Ilustracion de noticias y comunidad"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-2">
       {featuredNews.map((item) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
+        <article class="shell-card p-6">
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{item.date}</p>
           <h2 class="mt-3 font-display text-2xl text-ink">{item.title}</h2>
           <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
@@ -30,34 +32,34 @@ import { featuredNews } from '../data/news';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Update format"
-      title="Short, clear stories will be easier for visitors to scan."
-      description="A later CMS version can add categories, featured posts, and article pages."
+      eyebrow="Lo que compartimos"
+      title="Noticias que ayudan a entender lo que esta pasando y por que importa."
+      description="Las familias merecen actualizaciones claras, cercanas y faciles de seguir."
     />
     <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="rounded-[1.5rem] bg-panel p-6">
-        <h2 class="font-display text-xl text-ink">Announcements</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">Important updates and schedule changes.</p>
+      <article class="shell-panel p-6">
+        <h2 class="font-display text-xl text-ink">Anuncios</h2>
+        <p class="mt-3 text-sm leading-7 text-muted">Informacion sobre eventos, fechas y oportunidades para participar.</p>
       </article>
-      <article class="rounded-[1.5rem] bg-white p-6 shadow-soft ring-1 ring-line">
-        <h2 class="font-display text-xl text-ink">Stories</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">Community-centered stories and milestones.</p>
+      <article class="shell-card p-6">
+        <h2 class="font-display text-xl text-ink">Historias</h2>
+        <p class="mt-3 text-sm leading-7 text-muted">Momentos que muestran la fuerza de las familias y la comunidad.</p>
       </article>
-      <article class="rounded-[1.5rem] bg-panel p-6">
-        <h2 class="font-display text-xl text-ink">Community updates</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">Friendly summaries families can share and revisit.</p>
+      <article class="shell-panel p-6">
+        <h2 class="font-display text-xl text-ink">Aliados</h2>
+        <p class="mt-3 text-sm leading-7 text-muted">Colaboraciones y recursos que amplian el alcance de la fundacion.</p>
       </article>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Need the latest info sooner?</h2>
+      <h2 class="font-display text-3xl tracking-tight">Quieres mantenerte cerca de las novedades?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-        The contact page can route questions about events, programs, or community announcements.
+        Estamos aqui para compartir informacion sobre programas, eventos y maneras de apoyar a la comunidad.
       </p>
       <div class="mt-6">
-        <Button href="/contact" variant="secondary">Contact us</Button>
+        <Button href="/contact" variant="secondary">Hablar con nosotros</Button>
       </div>
     </div>
   </section>

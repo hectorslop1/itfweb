@@ -1,0 +1,51 @@
+---
+import Button from './Button.astro';
+
+const reasons = [
+  'Necesito apoyo',
+  'Quiero ser voluntario',
+  'Quiero donar',
+  'Represento a una organizacion',
+  'Pregunta general',
+];
+---
+
+<form class="shell-card p-6 sm:p-8" aria-label="Formulario de contacto">
+  <div class="grid gap-5 sm:grid-cols-2">
+    <label class="block">
+      <span class="mb-2 block text-sm font-semibold text-ink">Nombre</span>
+      <input class="field-input" type="text" name="name" placeholder="Tu nombre" />
+    </label>
+
+    <label class="block">
+      <span class="mb-2 block text-sm font-semibold text-ink">Correo electronico</span>
+      <input class="field-input" type="email" name="email" placeholder="tu@correo.com" />
+    </label>
+
+    <label class="block">
+      <span class="mb-2 block text-sm font-semibold text-ink">Telefono</span>
+      <input class="field-input" type="tel" name="phone" placeholder="(000) 000-0000" />
+    </label>
+
+    <label class="block">
+      <span class="mb-2 block text-sm font-semibold text-ink">Motivo</span>
+      <select class="field-select" name="reason">
+        {reasons.map((reason) => (
+          <option value={reason}>{reason}</option>
+        ))}
+      </select>
+    </label>
+  </div>
+
+  <label class="mt-5 block">
+    <span class="mb-2 block text-sm font-semibold text-ink">Mensaje</span>
+    <textarea class="field-textarea" name="message" placeholder="Cuentanos como podemos ayudarte."></textarea>
+  </label>
+
+  <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <p class="text-sm leading-6 text-muted">
+      Nuestro equipo revisa cada mensaje con cuidado para orientar a familias, aliados y donantes.
+    </p>
+    <Button>Enviar mensaje</Button>
+  </div>
+</form>

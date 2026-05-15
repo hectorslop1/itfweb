@@ -8,278 +8,295 @@ import { upcomingEvents } from '../data/events';
 import { resourceTopics } from '../data/resources';
 import { featuredNews } from '../data/news';
 import { facebookHighlights } from '../data/facebook';
+import { donationAmounts } from '../data/site';
 
 const whatWeDo = [
   {
     title: 'Guiamos a familias',
     description:
-      'Clear, practical support for special education, regional center navigation, and everyday next steps.',
+      'Acompaniamos a padres, madres y cuidadores mientras entienden servicios, derechos, procesos escolares y apoyos comunitarios.',
   },
   {
-    title: 'Creamos comunidad',
+    title: 'Conectamos recursos',
     description:
-      'Warm events, workshops, and gatherings that help families feel informed, included, and welcomed.',
+      'Acercamos herramientas practicas, materiales bilingues y orientacion para que las familias puedan actuar con mas confianza.',
   },
   {
-    title: 'Compartimos recursos',
+    title: 'Fortalecemos comunidad',
     description:
-      'Trusted guides, tools, and bilingual materials families can return to when they need them most.',
+      'Creamos espacios donde las familias se sienten vistas, escuchadas y acompanadas por otras personas que comparten experiencias similares.',
   },
 ];
 
 const impactStats = [
-  { value: '100+', label: 'Families reached through community education' },
-  { value: '2', label: 'Core regions served with room to grow' },
-  { value: '1', label: 'Trusted place to start for guidance and connection' },
+  { value: '100+', label: 'Familias alcanzadas con orientacion, talleres y acompanamiento' },
+  { value: '2', label: 'Regiones con presencia comunitaria y oportunidades de crecimiento' },
+  { value: 'Bilingue', label: 'Un enfoque cercano para familias hispanas con apoyo en ingles' },
 ];
 ---
 
 <BaseLayout
-  title="Ives Torres Foundation | Warm, bilingual nonprofit website"
-  description="Modern homepage shell for the Ives Torres Foundation with a clear structure, warm design direction, and placeholder content."
+  title="Ives Torres Foundation | Recursos, educacion y comunidad"
+  description="Apoyamos a familias hispanas con seres queridos con discapacidad a encontrar recursos, educacion y comunidad."
 >
-  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-24">
-    <div class="flex flex-col justify-center gap-8">
-      <div class="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm">
-        <span class="h-2.5 w-2.5 rounded-full bg-gold"></span>
-        Bilingual nonprofit support for families across California
+  <section class="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+    <div class="grid gap-10 overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/80 p-6 shadow-soft backdrop-blur sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-10">
+      <div class="flex flex-col justify-center gap-8">
+        <div class="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm">
+          <span class="h-2.5 w-2.5 rounded-full bg-gold"></span>
+          California · Comunidad bilingue · Apoyo familiar
+        </div>
+
+        <div class="space-y-5">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Somos ITF</p>
+          <h1 class="font-display text-5xl leading-tight tracking-tight text-ink sm:text-6xl">
+            Apoyamos a familias hispanas con seres queridos con discapacidad a encontrar recursos,
+            educacion y comunidad.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-muted">
+            Ives Torres Foundation acompania a familias con informacion clara, talleres, eventos y
+            conexiones comunitarias que ayudan a avanzar con mas confianza y menos soledad.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <Button href="/contact">Necesito apoyo</Button>
+          <Button href="/events" variant="secondary">Ver eventos</Button>
+          <Button href="/donate" variant="secondary">Donar hoy</Button>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          {heroStats.map((stat) => (
+            <div class="shell-card p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-navy">{stat.value}</p>
+              <p class="mt-2 text-sm leading-6 text-muted">{stat.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div class="space-y-5">
-        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Somos ITF</p>
-        <h1 class="font-display text-5xl tracking-tight text-ink sm:text-6xl">
-          A trusted place where families can find support, clarity, and belonging.
-        </h1>
-        <p class="max-w-2xl text-lg leading-8 text-muted">
-          This first homepage pass turns the audit into a warm, modern layout that quickly points
-          visitors toward support, events, resources, and community connection.
-        </p>
-      </div>
-
-      <div class="flex flex-col gap-3 sm:flex-row">
-        <Button href="/contact">Necesito apoyo</Button>
-        <Button href="/events" variant="secondary">Ver eventos</Button>
-        <Button href="/donate" variant="ghost">Donar</Button>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-3">
-        {heroStats.map((stat) => (
-          <div class="rounded-3xl border border-white/80 bg-white/85 p-4 shadow-soft backdrop-blur">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-navy">{stat.value}</p>
-            <p class="mt-2 text-sm leading-6 text-muted">{stat.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <div class="relative">
-      <div class="absolute inset-0 -z-10 translate-x-6 translate-y-6 rounded-[2rem] bg-gold/15 blur-2xl"></div>
-      <div class="overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-soft">
-        <div class="grid min-h-[36rem] gap-6 bg-hero-grid bg-[size:32px_32px] p-6 sm:p-8">
-          <div class="rounded-[1.75rem] bg-navy p-6 text-white">
-            <p class="text-sm uppercase tracking-[0.24em] text-white/70">Latest update</p>
-            <p class="mt-3 text-2xl leading-tight">
-              {featuredNews[0].title}
-            </p>
-            <p class="mt-3 max-w-sm text-sm leading-7 text-white/80">
-              {featuredNews[0].description}
-            </p>
-            <p class="mt-5 text-xs uppercase tracking-[0.22em] text-white/60">{featuredNews[0].date}</p>
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
-            {heroHighlights.map((item) => (
-              <div class="rounded-[1.5rem] bg-white/90 p-5 ring-1 ring-line">
-                <p class="text-sm font-semibold text-navy">{item.title}</p>
+      <div class="grid gap-4">
+        <div class="overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-soft">
+          <img
+            src="/images/hero-family.svg"
+            alt="Ilustracion de familias reunidas en comunidad"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
+          <article class="rounded-[1.75rem] bg-navy p-6 text-white shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Noticias</p>
+            <h2 class="mt-3 font-display text-2xl leading-tight">{featuredNews[0].title}</h2>
+            <p class="mt-3 text-sm leading-7 text-white/80">{featuredNews[0].description}</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.2em] text-white/60">{featuredNews[0].date}</p>
+          </article>
+          <div class="grid gap-4">
+            {heroHighlights.slice(0, 2).map((item) => (
+              <article class="shell-card p-5">
+                <h2 class="text-sm font-semibold text-navy">{item.title}</h2>
                 <p class="mt-2 text-sm leading-6 text-muted">{item.description}</p>
-              </div>
+              </article>
             ))}
-          </div>
-
-          <div class="mt-auto grid gap-4 sm:grid-cols-2">
-            <div class="rounded-[1.5rem] border border-line bg-panel p-5">
-              <p class="text-sm font-semibold text-navy">Support first</p>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Families should immediately know how to ask for help and what happens next.
-              </p>
-            </div>
-            <div class="rounded-[1.5rem] border border-line bg-white/90 p-5">
-              <p class="text-sm font-semibold text-navy">Bilingual ready</p>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                The content system will later expand into Spanish and English with shared structure.
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="what-we-do" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="What we do"
-      title="Support that feels practical, human, and easy to understand."
-      description="The foundation helps families navigate services, build confidence, and find community without overwhelming them."
+      eyebrow="Lo que hacemos"
+      title="Acompanamiento real para familias que necesitan claridad y comunidad."
+      description="Cada parte del sitio esta pensada para ayudar a las familias a orientarse, tomar decisiones y sentirse acompanadas."
     />
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
       {whatWeDo.map((item) => (
-        <article class="rounded-[1.75rem] border border-white/80 bg-white/90 p-6 shadow-soft">
-          <h3 class="font-display text-xl text-ink">{item.title}</h3>
+        <article class="shell-card p-6">
+          <h3 class="font-display text-2xl text-ink">{item.title}</h3>
           <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
         </article>
       ))}
     </div>
   </section>
 
-  <section id="programs" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <SectionHeading
-      eyebrow="Featured programs"
-      title="Programs presented as clear, friendly cards."
-      description="Each card is a placeholder for a future CMS-driven program entry and keeps the layout grounded in the audit."
-    />
-    <div class="mt-10 grid gap-5 lg:grid-cols-3">
-      {featuredPrograms.map((program) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{program.label}</p>
-          <h3 class="mt-3 font-display text-2xl text-ink">{program.title}</h3>
-          <p class="mt-3 text-sm leading-7 text-muted">{program.description}</p>
-          <p class="mt-5 text-sm font-medium text-navy">{program.audience}</p>
-        </article>
-      ))}
+  <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="grid gap-8 rounded-[2.25rem] bg-[linear-gradient(135deg,#17395f_0%,#24507f_100%)] p-8 text-white shadow-soft lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Programas destacados</p>
+        <h2 class="mt-3 font-display text-4xl leading-tight">Apoyos que combinan informacion, pertenencia y accion.</h2>
+        <p class="mt-4 text-sm leading-7 text-white/80">
+          Desde talleres y orientacion para padres hasta encuentros comunitarios, nuestros programas buscan responder a necesidades reales con calidez.
+        </p>
+        <div class="mt-6">
+          <Button href="/programs" variant="secondary">Explorar programas</Button>
+        </div>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        {featuredPrograms.map((program) => (
+          <article class="rounded-[1.75rem] bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">{program.label}</p>
+            <h3 class="mt-3 font-display text-2xl">{program.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-white/80">{program.description}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section id="events" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Upcoming events"
-      title="A preview that makes events feel welcoming, not transactional."
-      description="The current site overemphasizes commerce language. This layout focuses on participation and clarity instead."
+      eyebrow="Proximos eventos"
+      title="Espacios donde las familias pueden aprender, compartir y sentirse acompanadas."
+      description="Los eventos acercan recursos utiles y crean oportunidades para convivir con otras familias y aliados."
     />
-    <div class="mt-10 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_22rem]">
       <div class="grid gap-4">
         {upcomingEvents.map((event) => (
-          <article class="flex flex-col gap-5 rounded-[1.5rem] border border-white/80 bg-white p-5 shadow-soft sm:flex-row sm:items-center">
+          <article class="shell-card flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
             <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-panel text-center">
               <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{event.date}</span>
             </div>
-            <div class="min-w-0">
-              <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <h3 class="font-display text-xl text-ink">{event.title}</h3>
+            <div class="grow">
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="font-display text-2xl text-ink">{event.title}</h3>
                 <span class="rounded-full bg-sky/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
                   {event.location}
                 </span>
+                {event.time && (
+                  <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+                    {event.time}
+                  </span>
+                )}
               </div>
-              <p class="mt-2 text-sm leading-6 text-muted">{event.details}</p>
+              <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
             </div>
           </article>
         ))}
       </div>
+      <div class="overflow-hidden rounded-[2rem] border border-white/80 bg-white shadow-soft">
+        <img
+          src="/images/community-event.svg"
+          alt="Ilustracion de un encuentro comunitario"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
 
-      <div class="rounded-[1.75rem] bg-navy p-8 text-white shadow-soft">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Why it matters</p>
-        <p class="mt-4 font-display text-2xl leading-tight">
-          Families should instantly know what is happening, where it is happening, and how to join.
-        </p>
-        <p class="mt-4 text-sm leading-7 text-white/80">
-          Later we will add richer event details, registration links, and bilingual routing.
-        </p>
-        <div class="mt-6">
-          <Button href="/events" variant="secondary">Ask about an event</Button>
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-8 rounded-[2.25rem] bg-white/80 p-8 shadow-soft ring-1 ring-white/70 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="overflow-hidden rounded-[2rem] border border-white/80 bg-white">
+        <img src="/images/impact-circles.svg" alt="Visual de impacto y comunidad" class="h-full w-full object-cover" />
+      </div>
+      <div>
+        <SectionHeading
+          eyebrow="Impacto"
+          title="Cada paso cuenta cuando una familia encuentra orientacion, calma y comunidad."
+          description="Las historias y los resultados de la fundacion hablan de confianza construida con escucha, presencia y accion."
+        />
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          {impactStats.map((stat) => (
+            <article class="shell-card p-5">
+              <p class="text-3xl font-bold tracking-tight text-navy">{stat.value}</p>
+              <p class="mt-2 text-sm leading-6 text-muted">{stat.label}</p>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <section id="impact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Impact stats"
-      title="Small numbers, displayed clearly, build trust fast."
-      description="The first version uses placeholder metrics so the visual hierarchy is in place before real reporting data arrives."
+      eyebrow="Comunidad en accion"
+      title="Historias, imagenes y momentos que reflejan la energia de la fundacion."
+      description="La comunidad vive en cada taller, conversacion y evento compartido entre familias, voluntarios y aliados."
     />
-    <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {impactStats.map((stat) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
-          <p class="text-4xl font-bold tracking-tight text-navy">{stat.value}</p>
-          <p class="mt-3 text-sm leading-7 text-muted">{stat.label}</p>
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {facebookHighlights.map((item, index) => (
+        <article class="overflow-hidden rounded-[1.9rem] border border-white/80 bg-white shadow-soft">
+          <div class="flex h-56 items-end bg-[linear-gradient(145deg,#dbeaf5_0%,#ffffff_48%,#f1d79b_100%)] p-6">
+            <span class="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-navy">
+              {item.type}
+            </span>
+          </div>
+          <div class="p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Facebook</p>
+            <h3 class="mt-2 font-display text-2xl text-ink">{item.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+            <p class="mt-4 text-sm font-medium text-navy">
+              {index === 0 ? 'Encuentros familiares y celebraciones' : 'Aprendizaje compartido y acompanamiento'}
+            </p>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <SectionHeading
-      eyebrow="Community in action"
-      title="Curated Facebook highlights, not a full embedded feed."
-      description="This keeps the page fast and intentional while still showing real community moments and social proof."
-    />
-    <div class="mt-10 grid gap-5 md:grid-cols-2">
-      {facebookHighlights.map((item) => (
-        <article class="overflow-hidden rounded-[1.75rem] border border-white/80 bg-white shadow-soft">
-          <div class="flex h-52 items-end bg-gradient-to-br from-sky via-white to-gold/20 p-6">
-            <span class="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-navy">
-              {item.type}
-            </span>
-          </div>
-          <div class="p-6">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Facebook highlight</p>
-            <h3 class="mt-2 font-display text-2xl text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
-          </div>
-        </article>
-      ))}
+    <div class="grid gap-8 rounded-[2.25rem] bg-gold/18 p-8 shadow-soft ring-1 ring-gold/20 lg:grid-cols-[1fr_auto] lg:items-center">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-navy">Donar</p>
+        <h2 class="mt-3 font-display text-4xl tracking-tight text-ink">
+          Tu apoyo ayuda a que mas familias encuentren informacion, alivio y acompanamiento.
+        </h2>
+        <p class="mt-4 text-sm leading-7 text-muted">
+          Cada donativo ayuda a sostener talleres, materiales bilingues, eventos comunitarios y momentos de orientacion que acercan esperanza a las familias.
+        </p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-3">
+          {donationAmounts.slice(0, 3).map((item) => (
+            <article class="rounded-[1.5rem] bg-white/80 p-4 shadow-sm ring-1 ring-white/70">
+              <p class="text-2xl font-bold text-navy">{item.amount}</p>
+              <p class="mt-2 text-sm leading-6 text-muted">{item.impact}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <Button href="/donate">Donar con PayPal</Button>
+        <Button href="/donate" variant="secondary">Ver opciones de Zelle</Button>
+      </div>
     </div>
   </section>
 
-  <section id="donate" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid gap-8 rounded-[2rem] bg-gold/15 p-8 shadow-soft ring-1 ring-gold/20 lg:grid-cols-[1fr_auto] lg:items-center">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-navy">Donation CTA</p>
-        <h2 class="mt-3 font-display text-3xl tracking-tight text-ink">
-          Giving should feel simple, transparent, and rooted in community care.
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div>
+        <SectionHeading
+          eyebrow="Recursos"
+          title="Una biblioteca clara para familias que necesitan respuestas practicas."
+          description="Guias, videos y materiales sencillos que ayudan a prepararse, hacer preguntas y tomar decisiones informadas."
+        />
+        <div class="mt-8">
+          <Button href="/resources" variant="secondary">Explorar recursos</Button>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {resourceTopics.map((topic) => (
+          <article class="shell-card p-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{topic.title}</p>
+            <p class="mt-3 text-sm leading-7 text-muted">{topic.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
+    <div class="grid gap-8 rounded-[2.25rem] bg-[linear-gradient(135deg,#17395f_0%,#285885_100%)] px-8 py-10 text-white shadow-soft lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Contacto</p>
+        <h2 class="mt-3 font-display text-4xl tracking-tight">
+          Si necesitas apoyo, informacion o una conversacion, estamos aqui para escucharte.
         </h2>
-        <p class="mt-3 text-sm leading-7 text-muted">
-          Later this area will explain PayPal as the primary method and Zelle as the secondary
-          option, with suggested donation amounts and clear instructions.
+        <p class="mt-4 max-w-2xl text-sm leading-7 text-white/80">
+          Ya sea para recibir orientacion, conocer programas, colaborar o apoyar a la fundacion, queremos ayudarte a encontrar el mejor siguiente paso.
         </p>
       </div>
       <div class="flex flex-col gap-3">
-        <Button href="/donate">Learn how to give</Button>
-        <Button href="/resources" variant="secondary">View resources</Button>
-      </div>
-    </div>
-  </section>
-
-  <section id="resources" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <SectionHeading
-      eyebrow="Resources preview"
-      title="A small, scan-friendly preview of the future resource library."
-      description="Families can move quickly through categories, with richer content and filters coming in a later pass."
-    />
-    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {resourceTopics.map((topic) => (
-        <article class="rounded-[1.5rem] border border-white/80 bg-white p-5 shadow-soft">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{topic.title}</p>
-          <p class="mt-3 text-sm leading-7 text-muted">{topic.description}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section id="contact" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="rounded-[2rem] bg-navy px-8 py-10 text-white shadow-soft">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Contact CTA</p>
-        <h2 class="mt-3 font-display text-3xl tracking-tight">
-          The next step is a clear, friendly contact experience.
-        </h2>
-        <p class="mt-3 text-sm leading-7 text-white/80">
-          In a later pass we will add the contact form and routing for support, volunteering, and
-          partner inquiries. For now, this section keeps the path simple and reassuring.
-        </p>
-      </div>
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Button href="/about" variant="secondary">Learn more</Button>
-        <Button href="/donate" variant="secondary">Donation info</Button>
+        <Button href="/contact" variant="secondary">Escribir mensaje</Button>
+        <Button href="/about" variant="secondary">Conocer la fundacion</Button>
       </div>
     </div>
   </section>

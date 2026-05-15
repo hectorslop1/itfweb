@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import ContactFormDemo from '../components/ContactFormDemo.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { contactPoints, contactReasons } from '../data/site';
@@ -8,18 +9,20 @@ import { contactPoints, contactReasons } from '../data/site';
 
 <BaseLayout
   title="Contact | Ives Torres Foundation"
-  description="Contact the foundation for support, volunteering, donations, or general questions."
+  description="Contacta a Ives Torres Foundation para recibir apoyo, colaborar o hacer una consulta."
 >
   <PageHero
-    eyebrow="Contact"
-    title="A friendly path for questions, support, and next steps."
-    description="This page uses a static mock layout for now, so the foundation has a consistent place for outreach."
+    eyebrow="Contacto"
+    title="Estamos aqui para escuchar, orientar y conectar a tu familia con apoyo."
+    description="Si necesitas informacion, quieres colaborar o buscas un recurso, puedes escribirnos y con gusto te responderemos."
+    imageSrc="/images/hero-family.svg"
+    imageAlt="Ilustracion de apoyo comunitario y familias"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-5 md:grid-cols-3">
       {contactPoints.map((point) => (
-        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft ring-1 ring-line">
+        <article class="shell-card p-6">
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{point.label}</p>
           <p class="mt-3 text-sm leading-7 text-muted">{point.value}</p>
         </article>
@@ -29,9 +32,9 @@ import { contactPoints, contactReasons } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Reasons to reach out"
-      title="Clear reasons help people get to the right support faster."
-      description="These options mirror the future contact form structure from the project brief."
+      eyebrow="Como podemos ayudarte"
+      title="Elige el motivo de tu mensaje y cuentanos que necesitas."
+      description="Queremos que pedir apoyo, hacer una pregunta o iniciar una colaboracion se sienta facil y claro."
     />
     <div class="mt-8 flex flex-wrap gap-3">
       {contactReasons.map((reason) => (
@@ -43,34 +46,25 @@ import { contactPoints, contactReasons } from '../data/site';
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-6 rounded-[2rem] bg-navy p-8 text-white shadow-soft lg:grid-cols-[1fr_0.9fr]">
-      <div>
-        <h2 class="font-display text-3xl tracking-tight">Contact form placeholder</h2>
-        <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-          The real form will come later. This static layout keeps the page ready for a future implementation.
-        </p>
-      </div>
-      <div class="rounded-[1.75rem] bg-white/10 p-6 ring-1 ring-white/15">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Coming later</p>
-        <ul class="mt-4 space-y-3 text-sm text-white/85">
-          <li>Name</li>
-          <li>Email</li>
-          <li>Phone optional</li>
-          <li>Reason for contact</li>
-          <li>Message</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="rounded-[2rem] bg-gold/15 p-8 shadow-soft ring-1 ring-gold/20">
-      <h2 class="font-display text-3xl tracking-tight text-ink">Need support now?</h2>
-      <p class="mt-3 max-w-2xl text-sm leading-7 text-muted">
-        This page is meant to make it easy to ask for help, volunteer, donate, or reach the right partner.
-      </p>
-      <div class="mt-6">
-        <Button href="/donate">Go to donate</Button>
+    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <ContactFormDemo />
+      <div class="space-y-5">
+        <article class="shell-panel p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Apoyo familiar</p>
+          <h2 class="mt-3 font-display text-2xl text-ink">Una conversacion puede ser el primer paso.</h2>
+          <p class="mt-3 text-sm leading-7 text-muted">
+            Si no sabes por donde empezar, podemos orientarte hacia recursos, programas o eventos que se alineen con tu situacion.
+          </p>
+        </article>
+        <article class="shell-card p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Aliados y voluntarios</p>
+          <p class="mt-3 text-sm leading-7 text-muted">
+            Tambien recibimos mensajes de organizaciones, voluntarios y personas que quieren apoyar el trabajo de la fundacion.
+          </p>
+          <div class="mt-5">
+            <Button href="/donate" variant="secondary">Ver formas de apoyar</Button>
+          </div>
+        </article>
       </div>
     </div>
   </section>

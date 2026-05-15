@@ -3,10 +3,10 @@ import Button from './Button.astro';
 
 const reasons = [
   'Necesito apoyo',
-  'Quiero ser voluntario',
-  'Quiero donar',
-  'Represento a una organizacion',
-  'Pregunta general',
+  'Solicitar cita',
+  'Padres con Poder',
+  'Eventos y talleres',
+  'Consulta general',
 ];
 ---
 
@@ -18,12 +18,12 @@ const reasons = [
     </label>
 
     <label class="block">
-      <span class="mb-2 block text-sm font-semibold text-ink">Correo electronico</span>
+      <span class="mb-2 block text-sm font-semibold text-ink">Email</span>
       <input class="field-input" type="email" name="email" placeholder="tu@correo.com" />
     </label>
 
     <label class="block">
-      <span class="mb-2 block text-sm font-semibold text-ink">Telefono</span>
+      <span class="mb-2 block text-sm font-semibold text-ink">Teléfono</span>
       <input class="field-input" type="tel" name="phone" placeholder="(000) 000-0000" />
     </label>
 
@@ -44,7 +44,7 @@ const reasons = [
 
   <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
     <p class="text-sm leading-6 text-muted">
-      Nuestro equipo revisa cada mensaje con cuidado para orientar a familias, aliados y donantes.
+      Nuestro equipo revisa cada mensaje con cuidado para orientar a familias, compartir recursos y coordinar citas.
     </p>
     <Button>Enviar mensaje</Button>
   </div>

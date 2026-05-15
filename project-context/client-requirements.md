@@ -48,3 +48,22 @@ The new site should have a strong visual impact and feel trustworthy, warm, and 
 - Avoid making events look like products.
 - Avoid making the site feel like a store.
 - The website should be easy for families to use.
+
+## Content Accuracy Rules
+
+All public-facing copy must be based on the existing Ives Torres Foundation website and client-provided context.
+
+Do not invent:
+- Founder biographies
+- Staff roles
+- Personal details
+- Impact metrics
+- Program claims
+- Donation outcomes
+- Legal/tax claims
+- Event details
+
+Important:
+Ives Torres is male and has Down syndrome. He is the inspiration behind the foundation. Do not describe Ives as a female leader, staff member, founder, or executive.
+
+If exact information is not available, use neutral foundation-level copy instead of inventing details.

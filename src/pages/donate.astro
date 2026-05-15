@@ -3,35 +3,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import { donationAmounts, donationMethods } from '../data/site';
+import { donationHighlights, partners } from '../data/site';
 ---
 
 <BaseLayout
   title="Donate | Ives Torres Foundation"
-  description="Apoya a Ives Torres Foundation con PayPal o Zelle y ayuda a sostener recursos, talleres y comunidad."
+  description="Apoya la misión de Ives Torres Foundation y ayuda a sostener recursos valiosos para la comunidad."
 >
   <PageHero
-    eyebrow="Donar"
-    title="Tu generosidad ayuda a que mas familias encuentren orientacion, recursos y comunidad."
-    description="Cada donativo apoya talleres, materiales bilingues, eventos comunitarios y acompanamiento para familias hispanas con seres queridos con discapacidad."
+    eyebrow="Apoya"
+    title="Tu apoyo mantiene viva nuestra misión."
+    description="Hacemos todo lo posible por proporcionar recursos valiosos a nuestras comunidades y las donaciones nos dan la capacidad de seguir adelante con ese trabajo."
     imageSrc="/images/impact-circles.svg"
     imageAlt="Visual de apoyo y donacion comunitaria"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-5 md:grid-cols-2">
-      {donationMethods.map((method, index) => (
+    <div class="grid gap-5 md:grid-cols-3">
+      {donationHighlights.map((item) => (
         <article class="shell-card p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
-            {index === 0 ? 'Opcion principal' : 'Opcion secundaria'}
-          </p>
-          <h2 class="mt-3 font-display text-2xl text-ink">{method.name}</h2>
-          <p class="mt-3 text-sm leading-7 text-muted">{method.detail}</p>
-          <div class="mt-5">
-            <Button href="/contact" variant={index === 0 ? 'primary' : 'secondary'}>
-              {index === 0 ? 'Donar con PayPal' : 'Solicitar datos de Zelle'}
-            </Button>
-          </div>
+          <p class="text-sm leading-7 text-muted">{item}</p>
         </article>
       ))}
     </div>
@@ -39,15 +30,18 @@ import { donationAmounts, donationMethods } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Cantidades sugeridas"
-      title="Pequenas y grandes aportaciones tienen un impacto real."
-      description="Estas cantidades ayudan a imaginar como una contribucion se transforma en materiales, espacios y acompanamiento."
+      eyebrow="En acción"
+      title="Tu donación ayuda a sostener recursos, eventos y redes de apoyo."
+      description="La donación es una manera directa de mantener vivos los recursos y la misión comunitaria."
     />
-    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      {donationAmounts.map((item) => (
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      {[
+        'Recursos valiosos para nuestras comunidades',
+        'Eventos y actividades que promueven inclusión y participación',
+        'Redes de apoyo para familias y personas con discapacidad',
+      ].map((item) => (
         <article class="rounded-[1.5rem] border border-white/80 bg-panel p-6 shadow-sm">
-          <p class="text-3xl font-bold tracking-tight text-navy">{item.amount}</p>
-          <p class="mt-3 text-sm leading-7 text-muted">{item.impact}</p>
+          <p class="mt-1 text-sm leading-7 text-muted">{item}</p>
         </article>
       ))}
     </div>
@@ -57,27 +51,27 @@ import { donationAmounts, donationMethods } from '../data/site';
     <div class="grid gap-8 rounded-[2.25rem] bg-white/80 p-8 shadow-soft ring-1 ring-white/70 lg:grid-cols-[1fr_0.9fr] lg:items-center">
       <div>
         <SectionHeading
-          eyebrow="Por que donar"
-          title="Donar significa acercar apoyo digno a familias que necesitan ser escuchadas y orientadas."
-          description="Tu apoyo ayuda a sostener eventos, materiales, espacios de aprendizaje y una presencia comunitaria confiable."
+          eyebrow="Por qué donar"
+          title="Cada aporte ayuda a perseguir la misión y sostener el impacto comunitario."
+          description="Tu apoyo ayuda a sostener el mensaje de apoyo, inclusión y agradecimiento que la fundación comparte con su comunidad."
         />
       </div>
       <div class="shell-card p-6">
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Impacto de tu apoyo</p>
-        <ul class="mt-4 space-y-3 text-sm leading-7 text-muted">
-          <li>Materiales bilingues para talleres y encuentros familiares</li>
-          <li>Espacios comunitarios para orientacion y acompanamiento</li>
-          <li>Recursos claros para navegar escuela, servicios y comunidad</li>
-        </ul>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Aliados públicos</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {partners.slice(0, 6).map((partner) => (
+            <span class="rounded-full bg-panel px-3 py-2 text-sm text-muted">{partner}</span>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Tienes preguntas sobre como apoyar?</h2>
+      <h2 class="font-display text-3xl tracking-tight">Tienes preguntas sobre cómo apoyar?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-        Estamos disponibles para orientar a donantes, familias y aliados que quieran contribuir al trabajo de la fundacion.
+        Estamos disponibles para orientar a donantes, familias y aliados que quieran contribuir al trabajo de la fundación.
       </p>
       <div class="mt-6">
         <Button href="/contact" variant="secondary">Hablar con el equipo</Button>

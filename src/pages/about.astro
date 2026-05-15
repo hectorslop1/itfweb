@@ -3,23 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import { aboutSections, teamMembers, values } from '../data/site';
+import { aboutHighlights, aboutSections, partners, values } from '../data/site';
 ---
 
 <BaseLayout
   title="About | Ives Torres Foundation"
-  description="Conoce la historia, mision y valores de Ives Torres Foundation."
+  description="Conoce la misión, visión y objetivo de Ives Torres Foundation."
 >
   <PageHero
     eyebrow="Nosotros"
-    title="Una fundacion creada para que las familias se sientan vistas, informadas y acompanadas."
-    description="Ives Torres Foundation trabaja para acercar orientacion, educacion y comunidad a familias hispanas con seres queridos con discapacidad."
+    title="Una fundación fundada en 2019 para crear más oportunidades para personas con discapacidad y sus familias."
+    description="Ives Torres Foundation acompaña a familias hispanas con recursos, educación, autoabogacía, eventos y redes de apoyo."
     imageSrc="/images/community-event.svg"
     imageAlt="Ilustracion de comunidad reunida"
   />
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-5 md:grid-cols-3">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
       {aboutSections.map((item) => (
         <article class="shell-card p-6">
           <h2 class="font-display text-2xl text-ink">{item.title}</h2>
@@ -34,8 +34,8 @@ import { aboutSections, teamMembers, values } from '../data/site';
       <div>
         <SectionHeading
           eyebrow="Valores"
-          title="Nuestro trabajo se mueve con confianza, respeto y cercania."
-          description="Estos valores guian la manera en que compartimos informacion, recibimos a las familias y construimos comunidad."
+          title="El trabajo de ITF se mueve con inclusión, equidad y comunidad."
+          description="Estos principios aparecen en la manera en que la fundación comparte educación, promueve participación y construye redes de apoyo."
         />
       </div>
       <div class="flex flex-wrap gap-3">
@@ -50,26 +50,39 @@ import { aboutSections, teamMembers, values } from '../data/site';
 
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <SectionHeading
-      eyebrow="Personas"
-      title="El liderazgo y las alianzas hacen posible una atencion mas cercana."
-      description="La fundacion crece gracias a personas comprometidas con la dignidad de las familias y el acceso a recursos utiles."
+      eyebrow="Historia y comunidad"
+      title="La historia de ITF se entiende mejor desde la inspiración, la presencia comunitaria y las alianzas."
+      description="La fundación crece con inspiración familiar, presencia comunitaria y una red amplia de aliados."
     />
-    <div class="mt-10 grid gap-5 md:grid-cols-2">
-      {teamMembers.map((member) => (
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {aboutHighlights.map((item) => (
         <article class="shell-card p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">{member.role}</p>
-          <h2 class="mt-3 font-display text-2xl text-ink">{member.name}</h2>
-          <p class="mt-3 text-sm leading-7 text-muted">{member.bio}</p>
+          <p class="text-sm leading-7 text-muted">{item}</p>
         </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Alianzas"
+      title="Aliados que acompañan la historia reciente de la fundación."
+      description="Organizaciones, escuelas y colaboradores que ayudan a ampliar recursos, oportunidades y comunidad."
+    />
+    <div class="mt-8 flex flex-wrap gap-3">
+      {partners.map((partner) => (
+        <span class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-muted shadow-sm">
+          {partner}
+        </span>
       ))}
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Conversemos sobre como podemos apoyar a tu familia u organizacion.</h2>
+      <h2 class="font-display text-3xl tracking-tight">Conversemos sobre cómo podemos apoyar a tu familia.</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
-        Si buscas orientacion, colaboracion o informacion sobre nuestros programas, estamos listos para escucharte.
+        Si buscas orientación, recursos o información sobre programas y eventos, estamos listos para escucharte.
       </p>
       <div class="mt-6">
         <Button href="/contact" variant="secondary">Contactar a ITF</Button>

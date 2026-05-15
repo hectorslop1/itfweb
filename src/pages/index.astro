@@ -8,36 +8,36 @@ import { upcomingEvents } from '../data/events';
 import { resourceTopics } from '../data/resources';
 import { featuredNews } from '../data/news';
 import { facebookHighlights } from '../data/facebook';
-import { donationAmounts } from '../data/site';
+import { donationHighlights } from '../data/site';
 
 const whatWeDo = [
   {
-    title: 'Guiamos a familias',
+    title: 'Educación especial y Centros Regionales',
     description:
-      'Acompaniamos a padres, madres y cuidadores mientras entienden servicios, derechos, procesos escolares y apoyos comunitarios.',
+      'Compartimos capacitación y recursos para que las familias puedan navegar servicios, escuela y salud con mayor claridad.',
   },
   {
-    title: 'Conectamos recursos',
+    title: 'Autoabogacía e inclusión',
     description:
-      'Acercamos herramientas practicas, materiales bilingues y orientacion para que las familias puedan actuar con mas confianza.',
+      'Promovemos herramientas, actividades y espacios de participación que fortalecen la voz de las familias y las personas con discapacidad.',
   },
   {
-    title: 'Fortalecemos comunidad',
+    title: 'Eventos y redes de apoyo',
     description:
-      'Creamos espacios donde las familias se sienten vistas, escuchadas y acompanadas por otras personas que comparten experiencias similares.',
+      'Creamos encuentros donde las familias se sienten acompañadas, conectadas y respaldadas por la comunidad.',
   },
 ];
 
 const impactStats = [
-  { value: '100+', label: 'Familias alcanzadas con orientacion, talleres y acompanamiento' },
-  { value: '2', label: 'Regiones con presencia comunitaria y oportunidades de crecimiento' },
-  { value: 'Bilingue', label: 'Un enfoque cercano para familias hispanas con apoyo en ingles' },
+  { value: '5,000+', label: 'Members / Miembros' },
+  { value: '50+', label: 'Cities / Ciudades' },
+  { value: '1,000+', label: 'Families / Familia' },
 ];
 ---
 
 <BaseLayout
-  title="Ives Torres Foundation | Recursos, educacion y comunidad"
-  description="Apoyamos a familias hispanas con seres queridos con discapacidad a encontrar recursos, educacion y comunidad."
+  title="Ives Torres Foundation | Más oportunidades para personas con discapacidad"
+  description="Brindamos apoyo comunitario a familias y a sus seres queridos con discapacidad."
 >
   <section class="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
     <div class="grid gap-10 overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/80 p-6 shadow-soft backdrop-blur sm:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-10">
@@ -50,19 +50,19 @@ const impactStats = [
         <div class="space-y-5">
           <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold">Somos ITF</p>
           <h1 class="font-display text-5xl leading-tight tracking-tight text-ink sm:text-6xl">
-            Apoyamos a familias hispanas con seres queridos con discapacidad a encontrar recursos,
-            educacion y comunidad.
+            Creamos más oportunidades para personas con discapacidad y sus familias.
           </h1>
           <p class="max-w-2xl text-lg leading-8 text-muted">
-            Ives Torres Foundation acompania a familias con informacion clara, talleres, eventos y
-            conexiones comunitarias que ayudan a avanzar con mas confianza y menos soledad.
+            Apoyamos a familias e individuos con discapacidades intelectuales y del desarrollo con
+            educación especial, Centros Regionales, servicios de salud, herramientas de
+            autoabogacía, actividades, eventos y redes de apoyo.
           </p>
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row">
           <Button href="/contact">Necesito apoyo</Button>
           <Button href="/events" variant="secondary">Ver eventos</Button>
-          <Button href="/donate" variant="secondary">Donar hoy</Button>
+          <Button href="/donate" variant="secondary">Donar</Button>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-3">
@@ -106,8 +106,8 @@ const impactStats = [
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
       eyebrow="Lo que hacemos"
-      title="Acompanamiento real para familias que necesitan claridad y comunidad."
-      description="Cada parte del sitio esta pensada para ayudar a las familias a orientarse, tomar decisiones y sentirse acompanadas."
+      title="Capacitación, recursos y comunidad para que ninguna familia recorra este camino sola."
+      description="El trabajo de ITF une información útil, inclusión y apoyo comunitario para familias hispanas y sus seres queridos con discapacidad."
     />
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
       {whatWeDo.map((item) => (
@@ -123,9 +123,9 @@ const impactStats = [
     <div class="grid gap-8 rounded-[2.25rem] bg-[linear-gradient(135deg,#17395f_0%,#24507f_100%)] p-8 text-white shadow-soft lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Programas destacados</p>
-        <h2 class="mt-3 font-display text-4xl leading-tight">Apoyos que combinan informacion, pertenencia y accion.</h2>
+        <h2 class="mt-3 font-display text-4xl leading-tight">Programas que conectan aprendizaje, defensa y pertenencia.</h2>
         <p class="mt-4 text-sm leading-7 text-white/80">
-          Desde talleres y orientacion para padres hasta encuentros comunitarios, nuestros programas buscan responder a necesidades reales con calidez.
+          Desde Padres con Poder hasta recursos de educación y presencia en Valle Central, cada programa busca responder a necesidades reales con cercanía.
         </p>
         <div class="mt-6">
           <Button href="/programs" variant="secondary">Explorar programas</Button>
@@ -147,8 +147,8 @@ const impactStats = [
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
       eyebrow="Proximos eventos"
-      title="Espacios donde las familias pueden aprender, compartir y sentirse acompanadas."
-      description="Los eventos acercan recursos utiles y crean oportunidades para convivir con otras familias y aliados."
+      title="Eventos y encuentros que acercan información útil, convivencia y apoyo."
+      description="Cafecitos, talleres y actividades comunitarias pensadas para aprender, participar y construir confianza."
     />
     <div class="mt-10 grid gap-6 lg:grid-cols-[1fr_22rem]">
       <div class="grid gap-4">
@@ -161,7 +161,7 @@ const impactStats = [
               <div class="flex flex-wrap items-center gap-2">
                 <h3 class="font-display text-2xl text-ink">{event.title}</h3>
                 <span class="rounded-full bg-sky/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
-                  {event.location}
+                  {event.region}
                 </span>
                 {event.time && (
                   <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
@@ -170,6 +170,9 @@ const impactStats = [
                 )}
               </div>
               <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
+              <div class="mt-4">
+                <Button href="/events" variant="secondary">{event.ctaLabel}</Button>
+              </div>
             </div>
           </article>
         ))}
@@ -192,8 +195,8 @@ const impactStats = [
       <div>
         <SectionHeading
           eyebrow="Impacto"
-          title="Cada paso cuenta cuando una familia encuentra orientacion, calma y comunidad."
-          description="Las historias y los resultados de la fundacion hablan de confianza construida con escucha, presencia y accion."
+          title="Más oportunidades de inclusión que ayudan a vivir con mayor independencia."
+          description="La fundación comparte una comunidad en crecimiento con miles de miembros, cientos de familias y presencia en decenas de ciudades."
         />
         <div class="mt-8 grid gap-4 sm:grid-cols-3">
           {impactStats.map((stat) => (
@@ -210,8 +213,8 @@ const impactStats = [
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <SectionHeading
       eyebrow="Comunidad en accion"
-      title="Historias, imagenes y momentos que reflejan la energia de la fundacion."
-      description="La comunidad vive en cada taller, conversacion y evento compartido entre familias, voluntarios y aliados."
+      title="Historias y publicaciones que muestran a la comunidad aprendiendo, compartiendo y celebrando."
+      description="La comunidad vive en cada publicación, evento y momento compartido entre familias, aliados y voluntarios."
     />
     <div class="mt-10 grid gap-5 md:grid-cols-2">
       {facebookHighlights.map((item, index) => (
@@ -226,7 +229,7 @@ const impactStats = [
             <h3 class="mt-2 font-display text-2xl text-ink">{item.title}</h3>
             <p class="mt-3 text-sm leading-7 text-muted">{item.description}</p>
             <p class="mt-4 text-sm font-medium text-navy">
-              {index === 0 ? 'Encuentros familiares y celebraciones' : 'Aprendizaje compartido y acompanamiento'}
+              {index === 0 ? 'Encuentros familiares y celebraciones' : 'Aprendizaje compartido y acompañamiento'}
             </p>
           </div>
         </article>
@@ -239,23 +242,22 @@ const impactStats = [
       <div class="max-w-3xl">
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-navy">Donar</p>
         <h2 class="mt-3 font-display text-4xl tracking-tight text-ink">
-          Tu apoyo ayuda a que mas familias encuentren informacion, alivio y acompanamiento.
+          Su apoyo mantiene viva nuestra misión.
         </h2>
         <p class="mt-4 text-sm leading-7 text-muted">
-          Cada donativo ayuda a sostener talleres, materiales bilingues, eventos comunitarios y momentos de orientacion que acercan esperanza a las familias.
+          Hacemos todo lo posible por proporcionar recursos valiosos a nuestras comunidades y las donaciones nos ayudan a seguir adelante con esa misión.
         </p>
         <div class="mt-6 grid gap-3 sm:grid-cols-3">
-          {donationAmounts.slice(0, 3).map((item) => (
+          {donationHighlights.map((item) => (
             <article class="rounded-[1.5rem] bg-white/80 p-4 shadow-sm ring-1 ring-white/70">
-              <p class="text-2xl font-bold text-navy">{item.amount}</p>
-              <p class="mt-2 text-sm leading-6 text-muted">{item.impact}</p>
+              <p class="text-sm leading-6 text-muted">{item}</p>
             </article>
           ))}
         </div>
       </div>
       <div class="flex flex-col gap-3">
-        <Button href="/donate">Donar con PayPal</Button>
-        <Button href="/donate" variant="secondary">Ver opciones de Zelle</Button>
+        <Button href="/donate">Apoya la misión</Button>
+        <Button href="/impact" variant="secondary">Ver el impacto</Button>
       </div>
     </div>
   </section>
@@ -265,8 +267,8 @@ const impactStats = [
       <div>
         <SectionHeading
           eyebrow="Recursos"
-          title="Una biblioteca clara para familias que necesitan respuestas practicas."
-          description="Guias, videos y materiales sencillos que ayudan a prepararse, hacer preguntas y tomar decisiones informadas."
+          title="Recursos para ayudar a nuestras familias a lograr más."
+          description="Categorías, materiales y notas de reunión para acercar información clara y útil a las familias."
         />
         <div class="mt-8">
           <Button href="/resources" variant="secondary">Explorar recursos</Button>
@@ -288,10 +290,10 @@ const impactStats = [
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Contacto</p>
         <h2 class="mt-3 font-display text-4xl tracking-tight">
-          Si necesitas apoyo, informacion o una conversacion, estamos aqui para escucharte.
+          Estamos felices de conectar con ustedes.
         </h2>
         <p class="mt-4 max-w-2xl text-sm leading-7 text-white/80">
-          Ya sea para recibir orientacion, conocer programas, colaborar o apoyar a la fundacion, queremos ayudarte a encontrar el mejor siguiente paso.
+          Háganos saber cómo podemos ayudarle o cómo le gustaría participar.
         </p>
       </div>
       <div class="flex flex-col gap-3">

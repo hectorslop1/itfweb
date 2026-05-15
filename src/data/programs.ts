@@ -9,22 +9,22 @@ export const featuredPrograms: Program[] = [
   {
     title: 'Padres con Poder',
     description:
-      'Sesiones de acompanamiento para padres y cuidadores que buscan herramientas para abogar por sus seres queridos con confianza.',
-    audience: 'Padres, madres y cuidadores que necesitan orientacion practica',
+      'Somos padres apoyando a padres. We are parents supporting parents.',
+    audience: 'Acompañamiento entre familias y defensa informada',
     label: 'Programa',
   },
   {
-    title: 'Talleres educativos',
+    title: 'Educación',
     description:
-      'Talleres sobre educacion especial, tecnologia, inclusion, autodefensa y servicios disponibles en la comunidad.',
-    audience: 'Familias, cuidadores y aliados comunitarios',
-    label: 'Taller',
+      'Recursos y capacitación para educación especial, herramientas de autoabogacía y acceso a servicios.',
+    audience: 'Familias, cuidadores y personas con discapacidad',
+    label: 'Recursos',
   },
   {
-    title: 'Eventos comunitarios',
+    title: 'Valle Central',
     description:
-      'Encuentros inclusivos que fortalecen la comunidad, celebran logros y acercan recursos a las familias.',
-    audience: 'Familias que buscan pertenencia, apoyo y conexion',
-    label: 'Comunidad',
+      'Presencia comunitaria para compartir cafecitos, talleres, eventos y recursos con familias del Valle Central.',
+    audience: 'Familias que buscan apoyo cercano en su región',
+    label: 'Región',
   },
 ];

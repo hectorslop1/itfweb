@@ -5,27 +5,27 @@ export type ResourceTopic = {
 
 export const resourceTopics: ResourceTopic[] = [
   {
-    title: 'Educacion especial',
-    description: 'Guias para entender apoyos escolares, reuniones, derechos y formas de abogar con confianza.',
+    title: 'Padres con Poder',
+    description: 'Recursos pensados para padres que quieren aprender, preguntar y abogar por sus hijos con más confianza.',
   },
   {
-    title: 'Centros regionales',
-    description: 'Informacion clara para comenzar procesos, entender elegibilidad y prepararse para citas importantes.',
+    title: 'Educación',
+    description: 'Materiales para educación especial, herramientas de aprendizaje y recursos para familias hispanas.',
   },
   {
-    title: 'Autodefensa',
-    description: 'Herramientas para ayudar a personas con discapacidad y a sus familias a expresar necesidades y metas.',
+    title: 'Programas',
+    description: 'Información sobre talleres, eventos y espacios de acompañamiento que comparte la fundación.',
   },
   {
-    title: 'Tecnologia',
-    description: 'Recursos digitales y tecnologia accesible para aprender, comunicarse y participar mas plenamente.',
+    title: 'Familia',
+    description: 'Apoyos para la vida diaria, orientación práctica y materiales para compartir en casa.',
   },
   {
-    title: 'Guias',
-    description: 'Materiales sencillos para consultar en casa cuando surgen preguntas urgentes o nuevas decisiones.',
+    title: 'Valle Central',
+    description: 'Recursos y actualizaciones para las familias que participan en la comunidad del Valle Central.',
   },
   {
-    title: 'Videos',
-    description: 'Explicaciones breves y faciles de compartir con otros familiares, cuidadores o aliados.',
+    title: 'Meeting Notes',
+    description: 'Actualizaciones, notas y materiales compartidos para seguir de cerca reuniones y actividades.',
   },
 ];

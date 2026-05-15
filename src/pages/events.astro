@@ -12,8 +12,8 @@ import { upcomingEvents } from '../data/events';
 >
   <PageHero
     eyebrow="Eventos"
-    title="Encuentros pensados para aprender, compartir y sentirse acompanados."
-    description="Los eventos de la fundacion acercan recursos, conversacion y comunidad a familias que necesitan orientacion y conexion."
+    title="Eventos pensados para aprender, compartir y fortalecer comunidad."
+    description="Los eventos públicos de ITF acercan recursos, conversación, inclusión y apoyo a familias de Inland Empire, Valle Central y otras comunidades."
     imageSrc="/images/community-event.svg"
     imageAlt="Ilustracion de evento comunitario"
   />
@@ -29,7 +29,7 @@ import { upcomingEvents } from '../data/events';
             <div class="flex flex-wrap items-center gap-2">
               <h2 class="font-display text-2xl text-ink">{event.title}</h2>
               <span class="rounded-full bg-sky/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
-                {event.location}
+                {event.region}
               </span>
               {event.time && (
                 <span class="rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
@@ -38,6 +38,11 @@ import { upcomingEvents } from '../data/events';
               )}
             </div>
             <p class="mt-2 text-sm leading-7 text-muted">{event.details}</p>
+            <div class="mt-4">
+              <Button href="/contact" variant={event.ctaLabel === 'Registrarme' ? 'primary' : 'secondary'}>
+                {event.ctaLabel}
+              </Button>
+            </div>
           </div>
         </article>
       ))}
@@ -47,8 +52,8 @@ import { upcomingEvents } from '../data/events';
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <SectionHeading
       eyebrow="Experiencia"
-      title="Mas que fechas, los eventos son una puerta de entrada a la comunidad."
-      description="Cada encuentro busca que las familias se lleven informacion util y la tranquilidad de saber que hay apoyo cerca."
+      title="Más que fechas, los eventos son una puerta de entrada a la comunidad."
+      description="Cafecitos, talleres y encuentros que combinan aprendizaje, celebración y acompañamiento."
     />
     <div class="mt-10 grid gap-4 md:grid-cols-3">
       <article class="shell-card p-6">
@@ -61,14 +66,14 @@ import { upcomingEvents } from '../data/events';
       </article>
       <article class="shell-card p-6">
         <h2 class="font-display text-xl text-ink">Recursos</h2>
-        <p class="mt-3 text-sm leading-7 text-muted">Oportunidades para conocer aliados, materiales utiles y servicios disponibles.</p>
+        <p class="mt-3 text-sm leading-7 text-muted">Oportunidades para conocer aliados, materiales útiles y servicios disponibles.</p>
       </article>
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
     <div class="rounded-[2rem] bg-navy p-8 text-white shadow-soft">
-      <h2 class="font-display text-3xl tracking-tight">Quieres saber cual evento es mejor para tu familia?</h2>
+      <h2 class="font-display text-3xl tracking-tight">Quieres saber cuál evento es mejor para tu familia?</h2>
       <p class="mt-3 max-w-2xl text-sm leading-7 text-white/80">
         Podemos ayudarte a encontrar un taller, encuentro o actividad que responda a tus intereses y necesidades.
       </p>

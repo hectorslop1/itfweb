@@ -6,13 +6,15 @@ export type FacebookHighlight = {
 
 export const facebookHighlights: FacebookHighlight[] = [
   {
-    title: 'Momentos de comunidad',
-    description: 'Una mirada a los encuentros donde las familias aprenden, comparten y se sienten acompanadas.',
+    title: 'Mujeres líderes',
+    description:
+      'Una celebración del Día de las Madres en Inland Empire que reunió apoyo, comunidad y reconocimiento para las familias.',
     type: 'Photo',
   },
   {
-    title: 'Resumen de evento',
-    description: 'Historias cortas que muestran aprendizaje, alegria y apoyo comunitario en accion.',
-    type: 'Video',
+    title: 'Taller de herramientas de comunicación',
+    description:
+      'Un recordatorio de cómo pequeños cambios en la comunicación pueden transformar la manera en que las familias aprenden y se acompañan.',
+    type: 'Post',
   },
 ];

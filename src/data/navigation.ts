@@ -5,6 +5,7 @@ export const navigation = [
   { label: 'Recursos', href: '/resources' },
   { label: 'Impacto', href: '/impact' },
   { label: 'Noticias', href: '/news' },
+  { label: 'Apoya', href: '/donate' },
   { label: 'Contacto', href: '/contact' },
 ] as const;
 

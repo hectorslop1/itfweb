@@ -1,93 +1,88 @@
 export const aboutSections = [
   {
-    title: 'Nuestra historia',
-    text: 'Ives Torres Foundation nace del deseo de acercar informacion, dignidad y acompanamiento a familias hispanas con seres queridos con discapacidad.',
+    title: 'Fundada en 2019',
+    text: 'Ives Torres Foundation fue fundada en 2019 para crear más oportunidades para personas con discapacidad y sus familias.',
   },
   {
-    title: 'Nuestra mision',
-    text: 'Ayudar a las familias a navegar sistemas de discapacidad, educacion y apoyo con mas claridad, confianza y comunidad.',
+    title: 'Nuestra misión',
+    text: 'Apoyar a familias e individuos con discapacidades intelectuales y del desarrollo mediante la capacitación y recursos para la educación especial, Centros Regionales, servicios de salud, herramientas de autoabogacía, actividades y eventos que promuevan la inclusión y participación, y redes de apoyo.',
   },
   {
-    title: 'Nuestra vision',
-    text: 'Construir una comunidad donde las familias se sientan informadas, respetadas y acompanadas en cada etapa.',
+    title: 'Nuestra visión',
+    text: 'Lograr la equidad en la educación y los servicios para las familias hispanas con un ser querido con discapacidad intelectual y del desarrollo.',
+  },
+  {
+    title: 'Nuestro objetivo',
+    text: 'Empoderar y mejorar la calidad de vida de las personas con discapacidades y sus familias, proporcionando acceso a recursos, información y educación que promuevan su plena participación en la sociedad.',
   },
 ];
 
 export const values = [
-  'Confianza',
-  'Calidez',
-  'Informacion accesible',
-  'Comunicacion bilingue',
+  'Inclusión',
+  'Equidad',
+  'Educación',
+  'Autoabogacía',
+  'Redes de apoyo',
 ];
 
-export const teamMembers = [
-  {
-    name: 'Ives Torres',
-    role: 'Fundadora',
-    bio: 'Lider comunitaria enfocada en orientar a familias con cercania, respeto y accion concreta.',
-  },
-  {
-    name: 'Aliados comunitarios',
-    role: 'Colaboradores',
-    bio: 'Escuelas, organizaciones y lideres locales que ayudan a ampliar el alcance de programas y recursos.',
-  },
+export const aboutHighlights = [
+  'Ives Torres es un hombre con síndrome de Down y la inspiración detrás de la fundación.',
+  'La comunidad de ITF acompaña a familias en Inland Empire, Valle Central y otras ciudades de California.',
+  'El trabajo de la fundación une recursos, eventos, educación y redes de apoyo.',
 ];
 
 export const impactMetrics = [
-  { value: '100+', label: 'Familias alcanzadas por talleres y orientacion comunitaria' },
-  { value: '2', label: 'Regiones con presencia activa y oportunidades de crecimiento' },
-  { value: 'Bilingue', label: 'Apoyo pensado para familias hispanas y aliados en ingles' },
-  { value: 'Cercano', label: 'Un enfoque humano que prioriza dignidad, escucha y confianza' },
+  { value: '5,000+', label: 'Members / Miembros' },
+  { value: '50+', label: 'Cities / Ciudades' },
+  { value: '1,000+', label: 'Families / Familia' },
 ];
 
 export const testimonials = [
   {
-    quote: 'Aqui encontramos informacion clara y un espacio donde hacer preguntas sin pena.',
-    name: 'Madre participante',
-    role: 'Voz de la comunidad',
+    quote:
+      'Gracias de todo corazón a la Fundación Ives. Dios los bendiga.',
+    name: 'Dulce López',
+    role: 'Mamá de Sofía',
   },
   {
-    quote: 'La fundacion crea puentes entre familias, recursos y aliados con una energia muy humana.',
-    name: 'Aliado comunitario',
-    role: 'Colaborador local',
+    quote:
+      'Gracias Ives Torres Foundation y equipo en general, por ayudarme en educarme y creer que hay esperanzas para mi hijo Gabriel.',
+    name: 'Alicia Delhoyo',
+    role: 'Madre participante',
   },
 ];
 
 export const partners = [
-  'Escuelas',
-  'Centros regionales',
-  'Organizaciones comunitarias',
-  'Defensores de familias',
+  'Consulado de México en San Bernardino',
+  'TODEC Legal Center',
+  'Inland Regional Center',
+  'Inland Respite',
+  '24Hr HomeCare',
+  'Walmart',
+  'Glendura Bakery',
+  'El Sabor de las 8 Regiones',
+  'CABE',
+  'ICAN-B',
+  'Fender',
+  'Heartland Saints',
 ];
 
-export const donationAmounts = [
-  { amount: '$25', impact: 'Ayuda a compartir materiales impresos y recursos basicos con una familia.' },
-  { amount: '$50', impact: 'Apoya materiales bilingues para un taller educativo comunitario.' },
-  { amount: '$100', impact: 'Contribuye a sostener una sesion de apoyo, orientacion o encuentro familiar.' },
-  { amount: '$250', impact: 'Fortalece eventos comunitarios con informacion, logistica y alcance local.' },
-];
-
-export const donationMethods = [
-  {
-    name: 'PayPal',
-    detail: 'Opcion principal para donar en linea de forma rapida, segura y familiar para muchas familias.',
-  },
-  {
-    name: 'Zelle',
-    detail: 'Opcion secundaria para apoyo directo mediante transferencia movil o bancaria.',
-  },
+export const donationHighlights = [
+  'We do our best to provide valuable resources to our communities and your donations give us the ability to pursue this mission.',
+  'Your support keeps our mission alive.',
+  'See how your support is directly impacting the communities you care about.',
 ];
 
 export const contactReasons = [
   'Necesito apoyo',
-  'Quiero ser voluntario',
-  'Quiero donar',
-  'Represento a una organizacion',
-  'Pregunta general',
+  'Solicitar cita',
+  'Padres con Poder',
+  'Eventos y talleres',
+  'Consulta general',
 ];
 
 export const contactPoints = [
-  { label: 'Correo', value: 'info@ivestorresfoundation.org' },
-  { label: 'Area de servicio', value: 'Familias y comunidades en California' },
-  { label: 'Idiomas', value: 'Espanol e ingles' },
+  { label: 'Email directo', value: 'Javier.torressme@gmail.com' },
+  { label: 'Horario de citas', value: 'Lunes a sábado · 9:00 am - 5:00 pm' },
+  { label: 'Áreas de servicio', value: 'Inland Empire y Valle Central' },
 ];

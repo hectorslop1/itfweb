@@ -2,30 +2,35 @@ export type EventPreview = {
   date: string;
   title: string;
   details: string;
-  location: string;
+  region: string;
   time?: string;
+  ctaLabel: string;
 };
 
 export const upcomingEvents: EventPreview[] = [
   {
-    date: 'Jun 12',
-    title: 'Taller para familias',
-    details: 'Conversacion bilingue sobre educacion especial, derechos y pasos concretos para buscar apoyo.',
-    location: 'Inland Empire',
-    time: '6:00 PM',
+    date: 'May 09',
+    title: 'Cafecito con Pan',
+    details:
+      'Un espacio de apoyo, comunidad y empoderamiento para las familias, con información compartida junto al Consulado de México en San Bernardino y TODEC Legal Center.',
+    region: 'Inland Empire',
+    ctaLabel: 'Ver detalles',
   },
   {
-    date: 'Jul 03',
-    title: 'Feria de recursos familiares',
-    details: 'Encuentro con organizaciones locales, materiales utiles y orientacion para familias en su propio idioma.',
-    location: 'Valle Central',
-    time: '10:00 AM',
+    date: 'Apr 29',
+    title: 'Cafecito con Pan en el corazón del Valle Central',
+    details:
+      'Familias con un ser querido con discapacidad se reunieron para compartir, aprender y conectar en un espacio seguro y acogedor.',
+    region: 'Valle Central',
+    time: 'Comunidad',
+    ctaLabel: 'Registrarme',
   },
   {
-    date: 'Jul 19',
-    title: 'Circulo de apoyo para padres',
-    details: 'Espacio cercano para compartir preguntas, experiencias y estrategias con otras familias.',
-    location: 'Online',
-    time: '7:00 PM',
+    date: 'Jun 07',
+    title: 'SDP Providers & Micro-enterprise Resource Expo',
+    details:
+      'Un evento para fortalecer conexiones entre familias y proveedores de servicios, construyendo puentes de colaboración para la comunidad.',
+    region: 'Comunidad ITF',
+    ctaLabel: 'Ver detalles',
   },
 ];
